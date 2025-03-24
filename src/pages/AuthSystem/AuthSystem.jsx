@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './AuthStyles.css';
-import { FaUser, FaLock, FaEnvelope, FaCheck } from 'react-icons/fa';
+import {FaUser}  from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import {FaEnvelope} from "react-icons/fa";
+import {FaCheck} from "react-icons/fa";
 
 function AuthSystem({ onLoginSuccess }) {
   const [isLoginView, setIsLoginView] = useState(true);

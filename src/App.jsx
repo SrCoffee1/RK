@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import FAQ from './pages/FAQ';  // Sua tela de FAQ
-import AuthSystem from './pages/AuthSystem';  // Sua tela de Login/Cadastro
+import FAQ from './pages/FAQ/FAQ.jsx'; 
+import AuthSystem from './pages/AuthSystem/AuthSystem.jsx';  
 
 function App() {
   return (

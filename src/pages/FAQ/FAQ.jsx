@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './FAQ.css';
-import { faqData } from '../../data/faqData';
+import { faqData } from './FaqData.js';   
 import FAQItem from './FAQItem';
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0); 
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
