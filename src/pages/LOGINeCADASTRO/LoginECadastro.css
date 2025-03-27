@@ -1,3 +1,4 @@
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@
     min-height: 100vh;
   }
   
+  /* Card principal */
   .auth-card {
     width: 100%;
     max-width: 380px;
@@ -26,6 +28,7 @@
     position: relative;
   }
   
+  /* Cabeçalho com título */
   .auth-header {
     background-color: #131313;
     padding: 20px 0;
@@ -65,15 +68,6 @@
   .input-group {
     position: relative;
     margin-bottom: 20px;
-  }
-  
-  .input-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 18px;
   }
   
   .input-group input {
@@ -117,6 +111,7 @@
     margin-right: 10px;
   }
   
+  /* Botão de submissão */
   .submit-btn {
     width: 100%;
     padding: 12px;
@@ -135,6 +130,7 @@
     box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
   }
   
+  /* Botão de alternância entre login/registro */
   .toggle-container {
     position: absolute;
     bottom: -25px;

@@ -1,0 +1,80 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+  border-right: 1px solid #ddd;
+}
+
+.dark-mode {
+  background-color: #2d2d2d;
+  color: white;
+}
+
+.toggle-sidebar {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-items {
+  margin-top: 3rem;
+  flex-grow: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item.expanded {
+  width: 100%;
+}
+
+.nav-item.collapsed {
+  width: 3rem;
+  justify-content: center;
+}
+
+.nav-item.active {
+  background-color: #1d4ed8;
+  color: white;
+}
+
+.nav-item.hover:hover {
+  background-color: #e5e7eb;
+}
+
+.icon {
+  margin-right: 1rem;
+}
+
+.text {
+  white-space: nowrap;
+}
+
+.settings {
+  padding: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.expanded-width {
+  width: 16rem;
+}
+
+.collapsed-width {
+  width: 3rem;
+}

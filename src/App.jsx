@@ -1,18 +1,33 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import FAQ from './pages/FAQ/FAQ';
+import Sidebar from './components/Sidebar';
+import LoginECadastro from './pages/LOGINeCADASTRO/LoginECadastro';
 
-import FAQ from './pages/FAQ/FAQ.jsx'; 
-import AuthSystem from './pages/AuthSystem/AuthSystem.jsx';  
+// Definindo as rotas
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div className="app-container">
+        <LoginECadastro/>
+      </div>
+    ),
+  },
+  {
+    path: "/FAQ",
+    element: (
+      <div className="app-container">
+        <Sidebar />
+        <FAQ />
+      </div>
+    ),
+  },
+]);
 
+// Componente principal
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/FAQ" element={<FAQ/>} />
-        <Route path="/AuthSystem" element={<AuthSystem/>} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
