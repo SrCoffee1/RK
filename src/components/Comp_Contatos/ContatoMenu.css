@@ -1,0 +1,33 @@
+.contact-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 4px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    width: 144px;
+  }
+  
+  .menu-options {
+    padding: 4px 0;
+  }
+  
+  .menu-option {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #e8eaed;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-option:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .option-icon {
+    margin-right: 8px;
+  }

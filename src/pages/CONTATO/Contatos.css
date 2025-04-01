@@ -1,0 +1,21 @@
+.contacts-container {
+    padding: 16px;
+  }
+  
+  .new-contact-button {
+    background-color: #1a73e8;
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .plus-icon {
+    margin-right: 8px;
+    font-size: 24px;
+  }
