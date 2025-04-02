@@ -1,0 +1,23 @@
+.barra-pesquisa {
+    background-color: #1f2937;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icone-pesquisa {
+    color: #3b82f6;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.campo-pesquisa {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d1d5db;
+}

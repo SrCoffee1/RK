@@ -1,24 +1,13 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Contatos from './pages/CONTATOS/Contatos';
 import FAQ from './pages/FAQ/FAQ';
 import Sidebar from './components/Sidebar';
 import LoginECadastro from './pages/LOGINeCADASTRO/LoginECadastro';
-import Contatos from './pages/CONTATOS/Contatos';
 
 // Definindo as rotas
 const router = createBrowserRouter([
-  
   {
-    path: "/",
-    element: (
-      <div className="app-container">
-        <Contatos/>
-      </div>
-    ),
-  },
-  {
-    path: "LoginECadastro",
+    path: "/LoginECadastro",
     element: (
       <div className="app-container">
         <LoginECadastro/>
@@ -26,7 +15,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/FAQ",
+    path: "/",
     element: (
       <div className="app-container">
         <Sidebar />
