@@ -1,21 +1,32 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import FAQ from './pages/FAQ/FAQ';
-import Sidebar from './components/Sidebar';
 import LoginECadastro from './pages/LOGINeCADASTRO/LoginECadastro';
+import { ContatosProvider } from './contexts/ContatosContext';
+import Sidebar from './components/Sidebar';
+import MainApp from './MainApp';
 
-// Definindo as rotas
 const router = createBrowserRouter([
   {
     path: "/LoginECadastro",
     element: (
       <div className="app-container">
-        <LoginECadastro/>
+        <LoginECadastro />
       </div>
     ),
   },
   {
     path: "/",
+    element: (
+      <ContatosProvider>
+        <div className="app-container">
+          <MainApp />
+        </div>
+      </ContatosProvider>
+    ),
+  },
+  {
+    path: "/FAQ",
     element: (
       <div className="app-container">
         <Sidebar />
@@ -25,7 +36,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// Componente principal
 function App() {
   return <RouterProvider router={router} />;
 }
