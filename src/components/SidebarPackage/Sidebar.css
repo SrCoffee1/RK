@@ -1,0 +1,112 @@
+/* === Sidebar.css === */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 100vh;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.sidebar.expanded {
+    width: 280px;
+}
+
+.sidebar.dark {
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #333;
+}
+
+.sidebar.light {
+    background-color: white;
+    color: #333;
+    border: 1px solid #eee;
+}
+
+/* === Seções da Sidebar === */
+.sidebar-top {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark .sidebar-top {
+    border-color: #333;
+}
+
+.light .sidebar-top {
+    border-color: #eee;
+}
+
+.sidebar-middle {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.sidebar-bottom {
+    padding: 10px 0;
+    border-top: 1px solid;
+}
+
+.dark .sidebar-bottom {
+    border-color: #333;
+}
+
+.light .sidebar-bottom {
+    border-color: #eee;
+}
+
+/* === Ícones e tema === */
+
+.toggle-btn {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark .toggle-btn {
+    border-color: #333;
+}
+
+.light .toggle-btn {
+    border-color: #eee;
+}
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 24px;
+    min-width: 20px;
+}
+
+.toggle-icon-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.theme-icon {
+    font-size: 18px;
+}
+
+/* === Texto de aviso === */
+
+.bottom-text {
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+    color: #888;
+}

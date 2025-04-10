@@ -1,0 +1,21 @@
+/* === ContentArea.css === */
+
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.content-area.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.content-area.light {
+    background-color: #f9f9f9;
+    color: #333;
+}

@@ -3,10 +3,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import FAQ from './pages/FAQ/FAQ';
 import LoginECadastro from './pages/LOGINeCADASTRO/LoginECadastro';
 import { ContatosProvider } from './contexts/ContatosContext';
-import Sidebar from './components/Sidebar';
 import MainApp from './MainApp';
+import Monitoramento from './pages/Monitoramento/Monitoramento';
+import Sidebar from './components/SidebarPackage/Sidebar';
 
 const router = createBrowserRouter([
+
+  {
+    path: "/",
+    element: (
+      <div className="app-container">
+        <Sidebar />
+      </div>
+    ),
+  },
+
   {
     path: "/LoginECadastro",
     element: (
@@ -15,8 +26,18 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+
   {
-    path: "/",
+    path: "/Monitoramento",
+    element: (
+      <div className="app-container">
+        <Monitoramento />
+      </div>
+    ),
+  },
+
+  {
+    path: "/ContatosProvider",
     element: (
       <ContatosProvider>
         <div className="app-container">
@@ -29,7 +50,6 @@ const router = createBrowserRouter([
     path: "/FAQ",
     element: (
       <div className="app-container">
-        <Sidebar />
         <FAQ />
       </div>
     ),
