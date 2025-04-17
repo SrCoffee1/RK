@@ -6,9 +6,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  body {
-    background-color: #0a0a13;
-  }
   
   .auth-container {
     display: flex;
@@ -23,7 +20,7 @@
     max-width: 380px;
     height: 500%;
     min-height: 400px;
-    background-color: #131313;
+    background: linear-gradient(#050505, #191919);
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid #1a73e8;
@@ -32,7 +29,7 @@
   
   /* Cabeçalho com título */
   .auth-header {
-    background-color: #131313;
+    background: linear-gradient(#242424, #242424);
     padding: 20px 0;
     text-align: center;
     position: relative;
@@ -55,12 +52,16 @@
     left: 0;
     width: 100%;
     height: 20px;
-    background-color: #131313;
+    background: linear-gradient(#242424, #242424);
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
-    border-top: 2px solid #1a73e8;
+    border-top: 4px solid #1a73e8;
     z-index: 1;
+    margin-bottom: -20px;
+  
+    transform: rotate(180deg); /* 👉 isso inverte o elemento */
   }
+  
   
   /* Formulário */
   .auth-form {
@@ -117,7 +118,7 @@
   .submit-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(to right, #1a73e8, #3f9bfc);
+    background: linear-gradient(#3a81f4, #1e3b8b);
     color: white;
     border: none;
     border-radius: 25px;
@@ -149,7 +150,7 @@
   max-width: 300px;
   height: 40px;
   color: #fff;
-  background-color: #131313;
+  background: linear-gradient(#3a81f4, #1e3b8b);
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
   border-top: 3px solid #1a73e8;

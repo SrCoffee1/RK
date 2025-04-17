@@ -9,6 +9,7 @@
     height: 100vh;
     background-color: #191919;
     color: white;
+    border: #717171 solid 2px;
     width: 60px;
     transition: width 0.3s ease;
     z-index: 1000;

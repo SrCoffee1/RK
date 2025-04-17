@@ -6,6 +6,7 @@ import { ContatosProvider } from './contexts/ContatosContext';
 import MainApp from './MainApp';
 import Monitoramento from './pages/Monitoramento/Monitoramento';
 import Sidebar from './components/SidebarPackage/Sidebar';
+import './global.css';
 
 // Criação das rotas do aplicativo
 const router = createBrowserRouter([
