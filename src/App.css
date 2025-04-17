@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Altura total da viewport */
+}
+
+/* Se a sua sidebar precisar de uma largura fixa */
+.app-container > .sidebar {
+  width: 250px; /* ou o tamanho que preferir */
+  flex-shrink: 0; /* Evita que a sidebar encolha */
+}
+
+/* Para o conteúdo principal ocupar o espaço restante */
+.app-container > *:not(.sidebar) {
+  flex-grow: 1;
+  overflow-y: auto; /* Para rolar se o conteúdo for maior que a tela */
+}

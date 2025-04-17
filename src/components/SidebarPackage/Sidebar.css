@@ -1,112 +1,100 @@
-/* === Sidebar.css === */
+*{
+  text-decoration: none;
+}
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.sidebar.expanded {
-    width: 280px;
-}
-
-.sidebar.dark {
-    background-color: #1c1c1c;
+    background-color: #191919;
     color: white;
-    border: 1px solid #333;
-}
-
-.sidebar.light {
-    background-color: white;
-    color: #333;
-    border: 1px solid #eee;
-}
-
-/* === Seções da Sidebar === */
-.sidebar-top {
-    height: 120px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    border-bottom: 1px solid;
-    cursor: pointer;
-    user-select: none;
-}
-
-.dark .sidebar-top {
-    border-color: #333;
-}
-
-.light .sidebar-top {
-    border-color: #eee;
-}
-
-.sidebar-middle {
-    flex-grow: 1;
+    width: 60px;
+    transition: width 0.3s ease;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
-}
-
-.sidebar-bottom {
-    padding: 10px 0;
-    border-top: 1px solid;
-}
-
-.dark .sidebar-bottom {
-    border-color: #333;
-}
-
-.light .sidebar-bottom {
-    border-color: #eee;
-}
-
-/* === Ícones e tema === */
-
-.toggle-btn {
-    height: 60px;
+    justify-content: space-between;
+    transition: 0.5 ease;
+  }
+  
+  .sidebar.expanded {
+    width: 220px;
+  }
+  
+  .sidebar.light {
+    background-color: #f3f4f6;
+    color: #1f2937;
+  }
+  
+  .sidebar-top,
+  .sidebar-middle,
+  .sidebar-bottom {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .toggle-icon-container {
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    border-bottom: 1px solid;
-    cursor: pointer;
-    user-select: none;
-}
-
-.dark .toggle-btn {
-    border-color: #333;
-}
-
-.light .toggle-btn {
-    border-color: #eee;
-}
-
-.toggle-icon {
-    font-weight: bold;
-    font-size: 24px;
-    min-width: 20px;
-}
-
-.toggle-icon-container {
-    display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .toggle-icon,
+  .theme-icon {
+    cursor: pointer;
+  }
+  
+  .sidebar-item {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    color: inherit;
+    display: flex;
     align-items: center;
-}
-
-.theme-icon {
-    font-size: 18px;
-}
-
-/* === Texto de aviso === */
-
-.bottom-text {
-    font-size: 12px;
-    padding: 10px;
-    text-align: center;
-    color: #888;
-}
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar.light .sidebar-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .sidebar-item.active {
+    background: linear-gradient(#3a81f4, #1e3b8b);
+    color: white;
+    border: #9dbef1 solid 2px;
+  }
+  
+  .sidebar.light .sidebar-item.active {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .item-text {
+    white-space: nowrap;
+  }
+  
+  .bottom-text {
+    font-size: 0.75rem;
+    padding: 1rem;
+    color: #d1d5db;
+  }
+  

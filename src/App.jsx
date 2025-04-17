@@ -7,10 +7,11 @@ import MainApp from './MainApp';
 import Monitoramento from './pages/Monitoramento/Monitoramento';
 import Sidebar from './components/SidebarPackage/Sidebar';
 
+// Criação das rotas do aplicativo
 const router = createBrowserRouter([
 
   {
-    path: "/",
+    path: "/sidebar", // Ajustando o caminho para login
     element: (
       <div className="app-container">
         <Sidebar />
@@ -19,37 +20,38 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/LoginECadastro",
+    path: "/login", // Ajustando o caminho para login
     element: (
       <div className="app-container">
         <LoginECadastro />
       </div>
     ),
   },
-
   {
-    path: "/Monitoramento",
+    path: "/monitoramento", // Página de Monitoramento
     element: (
       <div className="app-container">
+        <Sidebar />
         <Monitoramento />
       </div>
     ),
   },
-
   {
-    path: "/ContatosProvider",
+    path: "/contatos", // Página de Contatos
     element: (
       <ContatosProvider>
         <div className="app-container">
-          <MainApp />
+          <Sidebar />
+          <MainApp page="Contatos" />
         </div>
       </ContatosProvider>
     ),
   },
   {
-    path: "/FAQ",
+    path: "/faq", // Página de FAQ
     element: (
       <div className="app-container">
+        <Sidebar />
         <FAQ />
       </div>
     ),

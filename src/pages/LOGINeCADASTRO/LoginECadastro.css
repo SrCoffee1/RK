@@ -133,28 +133,27 @@
   }
   
   /* Botão de alternância entre login/registro */
-  .toggle-container {
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .toggle-btn {
-    margin-bottom: 50px;
-    width: 500%;
-    height: 40px;
-    color: #fff;
-    background-color: #131313;
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
-    border-top: 3px solid #1a73e8;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
+/* Botão de alternância entre login/registro */
+.toggle-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative; /* ou remova completamente o position */
+}
+
+.toggle-btn {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  color: #fff;
+  background-color: #131313;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-top: 3px solid #1a73e8;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}

@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import SidebarItem from './SidebarItem';
-import * as Icons from '../ICons/Icons';
 import './Sidebar.css';
+import * as Icons from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Sidebar = ({ activePage, setActivePage }) => {
+const SidebarItem = ({ to, icon, text, isExpanded, isActive }) => (
+  <Link to={to} className={`sidebar-item ${isActive ? 'active' : ''}`} title={!isExpanded ? text : undefined}>
+    {icon}
+    {isExpanded && <span className="item-text">{text}</span>}
+  </Link>
+);
+
+const Sidebar = () => {
+  const location = useLocation();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
@@ -13,42 +21,60 @@ const Sidebar = ({ activePage, setActivePage }) => {
     setIsDarkTheme(!isDarkTheme);
   };
 
+  const routeMap = [
+    { to: '/monitoramento', text: 'Câmeras', icon: <Icons.Camera size={20} /> },
+    { to: '/contatos', text: 'Contatos', icon: <Icons.Phone size={20} /> },
+    { to: '/perfil', text: 'Perfil', icon: <Icons.UserCircle size={20} /> },
+    { to: '/faq', text: 'FAQ', icon: <Icons.HelpCircle size={20} /> },
+    { to: '/configuracoes', text: 'Configurações', icon: <Icons.Settings size={20} /> },
+    { to: '/login', text: 'Logout', icon: <Icons.LogOut size={20} /> },
+  ];
+
   return (
     <div className={`sidebar ${isDarkTheme ? 'dark' : 'light'} ${isExpanded ? 'expanded' : ''}`}>
-      
-      {/* Seção Topo: Botão de expandir/recolher e tema */}
       <div className="sidebar-top">
         <div className="sidebar-toggle" onClick={toggleSidebar}>
           <div className="toggle-icon-container">
-            <div className="toggle-icon"><Icons.Chevron /></div>
+            <div className="toggle-icon"><Icons.ChevronRight size={20} /></div>
             {isExpanded && (
               <div className="theme-icon" onClick={toggleTheme}>
-                {isDarkTheme ? <Icons.Sun /> : <Icons.Moon />}
+                {isDarkTheme ? <Icons.Sun size={20} /> : <Icons.Moon size={20} />}
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {/* Seção do Meio: Itens principais */}
       <div className="sidebar-middle">
-        <SidebarItem icon={<Icons.Camera />} text="Câmeras" isActive={activePage === 'Câmeras'} isExpanded={isExpanded} onClick={() => setActivePage('Câmeras')} />
-        <SidebarItem icon={<Icons.Phone />} text="Contatos" isActive={activePage === 'Contatos'} isExpanded={isExpanded} onClick={() => setActivePage('Contatos')} />
-        <SidebarItem icon={<Icons.Profile />} text="Perfil" isActive={activePage === 'Perfil'} isExpanded={isExpanded} onClick={() => setActivePage('Perfil')} />
-        <SidebarItem icon={<Icons.Help />} text="FAQ" isActive={activePage === 'FAQ'} isExpanded={isExpanded} onClick={() => setActivePage('FAQ')} />
+        {routeMap.slice(0, 4).map(({ to, text, icon }) => (
+          <SidebarItem
+            key={to}
+            to={to}
+            text={text}
+            icon={icon}
+            isExpanded={isExpanded}
+            isActive={location.pathname === to}
+          />
+        ))}
       </div>
 
-      {/* Seção Inferior: Somente Configurações */}
       <div className="sidebar-bottom">
-        <SidebarItem icon={<Icons.Settings />} text="Configurações" isActive={activePage === 'Configurações'} isExpanded={isExpanded} onClick={() => setActivePage('Configurações')} />
-
-        {!isDarkTheme && isExpanded && (
-          <div className="bottom-text">
-            Ativar o Windows<br />
-            Acesse Configurações para ativar o Windows.
-          </div>
-        )}
+        <SidebarItem
+          to="/configuracoes"
+          text="Configurações"
+          icon={<Icons.Settings size={20} />}
+          isExpanded={isExpanded}
+          isActive={location.pathname === '/configuracoes'}
+        />
+        <SidebarItem
+          to="/login"
+          text="Logout"
+          icon={<Icons.LogOut size={20} />}
+          isExpanded={isExpanded}
+          isActive={location.pathname === '/login'}
+        />
       </div>
+
     </div>
   );
 };
