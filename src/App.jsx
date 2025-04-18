@@ -7,6 +7,7 @@ import MainApp from './MainApp';
 import Monitoramento from './pages/Monitoramento/Monitoramento';
 import Sidebar from './components/SidebarPackage/Sidebar';
 import './global.css';
+import NotificationSidebar from './components/NotificationSidebar/NotificationSidebar';
 
 // Criação das rotas do aplicativo
 const router = createBrowserRouter([
@@ -33,26 +34,30 @@ const router = createBrowserRouter([
     element: (
       <div className="app-container">
         <Sidebar />
+        <NotificationSidebar />
         <Monitoramento />
       </div>
     ),
   },
+
   {
     path: "/contatos", // Página de Contatos
     element: (
       <ContatosProvider>
         <div className="app-container">
           <Sidebar />
+          <NotificationSidebar />
           <MainApp page="Contatos" />
         </div>
       </ContatosProvider>
     ),
   },
   {
-    path: "/faq", // Página de FAQ
+    path: "/", // Página de FAQ
     element: (
       <div className="app-container">
         <Sidebar />
+        <NotificationSidebar />
         <FAQ />
       </div>
     ),
