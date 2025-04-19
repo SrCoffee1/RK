@@ -7,61 +7,83 @@ import MainApp from './MainApp';
 import Monitoramento from './pages/Monitoramento/Monitoramento';
 import Sidebar from './components/SidebarPackage/Sidebar';
 import './global.css';
-import NotificationSidebar from './components/NotificationSidebar/NotificationSidebar';
-
+import ConfigScreen from './pages/ConfigScreen/ConfigScreen';
+import NotificationScreen from './pages/NotificationScreen/Notification';
+import Perfil from './pages/Perfil/Perfil';
 // Criação das rotas do aplicativo
 const router = createBrowserRouter([
 
   {
-    path: "/sidebar", // Ajustando o caminho para login
-    element: (
-      <div className="app-container">
-        <Sidebar />
-      </div>
-    ),
-  },
-
-  {
-    path: "/login", // Ajustando o caminho para login
+    path: "/login",
     element: (
       <div className="app-container">
         <LoginECadastro />
       </div>
     ),
   },
+
   {
-    path: "/monitoramento", // Página de Monitoramento
+    path: "/monitoramento",
     element: (
       <div className="app-container">
         <Sidebar />
-        <NotificationSidebar />
         <Monitoramento />
       </div>
     ),
   },
 
   {
-    path: "/contatos", // Página de Contatos
+    path: "/contatos",
     element: (
       <ContatosProvider>
         <div className="app-container">
           <Sidebar />
-          <NotificationSidebar />
           <MainApp page="Contatos" />
         </div>
       </ContatosProvider>
     ),
   },
+
   {
-    path: "/", // Página de FAQ
+    path: "/notifications",
     element: (
       <div className="app-container">
         <Sidebar />
-        <NotificationSidebar />
+        <NotificationScreen />
+      </div>
+    ),
+  },
+
+  {
+    path: "/perfil",
+    element: (
+      <div className="app-container">
+        <Sidebar />
+        <Perfil />
+      </div>
+    ),
+  },
+
+  {
+    path: "/faq",
+    element: (
+      <div className="app-container">
+        <Sidebar />
         <FAQ />
       </div>
     ),
   },
+
+  {
+    path: "/config",
+    element: (
+      <div className="app-container">
+        <Sidebar />
+        <ConfigScreen />
+      </div>
+    ),
+  },
+
 ]);
 
 function App() {

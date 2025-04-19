@@ -4,7 +4,11 @@ import * as Icons from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const SidebarItem = ({ to, icon, text, isExpanded, isActive }) => (
-  <Link to={to} className={`sidebar-item ${isActive ? 'active' : ''}`} title={!isExpanded ? text : undefined}>
+  <Link
+    to={to}
+    className={`sidebar-item ${isActive ? 'active' : ''}`}
+    title={!isExpanded ? text : undefined}
+  >
     {icon}
     {isExpanded && <span className="item-text">{text}</span>}
   </Link>
@@ -21,12 +25,16 @@ const Sidebar = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
-  const routeMap = [
+  const routeTop = [
     { to: '/monitoramento', text: 'Câmeras', icon: <Icons.Camera size={20} /> },
     { to: '/contatos', text: 'Contatos', icon: <Icons.Phone size={20} /> },
+    { to: '/notifications', text: 'Notificações', icon: <Icons.Bell size={20} /> },
     { to: '/perfil', text: 'Perfil', icon: <Icons.UserCircle size={20} /> },
     { to: '/faq', text: 'FAQ', icon: <Icons.HelpCircle size={20} /> },
-    { to: '/configuracoes', text: 'Configurações', icon: <Icons.Settings size={20} /> },
+  ];
+
+  const routeBottom = [
+    { to: '/config', text: 'Configurações', icon: <Icons.Settings size={20} /> },
     { to: '/login', text: 'Logout', icon: <Icons.LogOut size={20} /> },
   ];
 
@@ -46,7 +54,7 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar-middle">
-        {routeMap.slice(0, 4).map(({ to, text, icon }) => (
+        {routeTop.map(({ to, text, icon }) => (
           <SidebarItem
             key={to}
             to={to}
@@ -59,22 +67,17 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar-bottom">
-        <SidebarItem
-          to="/configuracoes"
-          text="Configurações"
-          icon={<Icons.Settings size={20} />}
-          isExpanded={isExpanded}
-          isActive={location.pathname === '/configuracoes'}
-        />
-        <SidebarItem
-          to="/login"
-          text="Logout"
-          icon={<Icons.LogOut size={20} />}
-          isExpanded={isExpanded}
-          isActive={location.pathname === '/login'}
-        />
+        {routeBottom.map(({ to, text, icon }) => (
+          <SidebarItem
+            key={to}
+            to={to}
+            text={text}
+            icon={icon}
+            isExpanded={isExpanded}
+            isActive={location.pathname === to}
+          />
+        ))}
       </div>
-
     </div>
   );
 };

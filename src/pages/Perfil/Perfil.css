@@ -1,0 +1,36 @@
+.perfil-container {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .perfil-imagem {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .perfil-nome {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .perfil-email {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .perfil-bio {
+    font-size: 14px;
+    color: #555;
+  }
+  

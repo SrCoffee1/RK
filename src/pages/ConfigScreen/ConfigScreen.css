@@ -1,0 +1,66 @@
+/* src/components/ConfigScreen/ConfigScreen.css */
+.config-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .config-box {
+    width: 360px;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+  }
+  
+  .config-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+  }
+  
+  .gear-icon {
+    margin-bottom: 12px;
+  }
+  
+  .config-header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .config-menu {
+    background-color: #353535;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 0 16px 24px 16px;
+  }
+  
+  .config-option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 14px 10px;
+    text-align: left;
+    color: #aaa;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 6px;
+  }
+  
+  .config-option:hover {
+    background-color: #444;
+  }
+  
+  .config-option span {
+    margin-left: 12px;
+  }

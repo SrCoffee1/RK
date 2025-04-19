@@ -1,0 +1,89 @@
+/* General layout */
+.notification-screen {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+    margin-left: 15%;
+    color: white;
+    padding: 3rem;
+  }
+  
+  /* Back button */
+  .back-button-container {
+    margin-bottom: 1rem;
+  }
+  
+  .back-button {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Notification list */
+  .notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  /* Notification cards */
+  .notification-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .notification-card.risk {
+  
+    background-color: #f43f5e;
+  }
+  
+  .notification-card.safe {
+    background-color: #1e293b;
+  }
+  
+  .icon-container {
+    margin-top: 0.25rem;
+  }
+  
+  .icon {
+    color: white;
+  }
+  
+  .check-icon {
+    color: #60a5fa;
+  }
+  
+  .notification-content {
+    flex: 1;
+  }
+  
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+  
+  .notification-title {
+    font-weight: 500;
+  }
+  
+  .notification-time {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  
+  .notification-text {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
