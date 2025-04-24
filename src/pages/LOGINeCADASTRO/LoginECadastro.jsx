@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importando useNavigate
 import './LoginECadastro.css';
 
 function LoginECadastro() {
   const [isLoginView, setIsLoginView] = useState(true);
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+  const navigate = useNavigate(); // Inicializando o useNavigate
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (isLoginView) {
-      console.log('Login realizado');
+      // Simples verificação de credenciais
+      if (username === 'RiskAlert' && password === '123') {
+        console.log('Login realizado com sucesso!');
+        setLoginError('');
+        navigate('/monitoramento');  // Redirecionando para a tela de monitoramento
+      } else {
+        console.log('Credenciais inválidas');
+        setLoginError('Usuário ou senha incorretos.');
+      }
     } else {
       console.log('Cadastro realizado');
     }
@@ -15,6 +29,7 @@ function LoginECadastro() {
 
   const toggleView = () => {
     setIsLoginView(!isLoginView);
+    setLoginError('');
   };
 
   return (
@@ -27,68 +42,62 @@ function LoginECadastro() {
         <form onSubmit={handleSubmit} className="auth-form">
           {!isLoginView && (
             <div className="input-group">
-              <input 
-                type="text" 
-                placeholder="Nome" 
-                required={!isLoginView} 
-              />
+              <input type="text" placeholder="Nome" required />
             </div>
           )}
-          
+
           {!isLoginView && (
             <div className="input-group">
-              <input 
-                type="email" 
-                placeholder="Email" 
-                required 
-              />
+              <input type="email" placeholder="Email" required />
             </div>
           )}
-          
+
           {isLoginView && (
             <div className="input-group">
               <input 
                 type="text" 
                 placeholder="Usuário" 
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required 
               />
             </div>
           )}
-          
+
           <div className="input-group">
             <input 
               type="password" 
               placeholder="Senha" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required 
             />
           </div>
-          
+
           {!isLoginView && (
             <div className="input-group">
-              <input 
-                type="password" 
-                placeholder="Confirmar senha" 
-                required={!isLoginView} 
-              />
+              <input type="password" placeholder="Confirmar senha" required />
             </div>
           )}
-          
+
           {isLoginView && (
             <p className="forgot-password">Esqueceu a senha?</p>
           )}
-          
+
           {!isLoginView && (
             <div className="terms-checkbox">
               <input type="checkbox" id="terms" required />
               <label htmlFor="terms">Li e concordo com os Termos</label>
             </div>
           )}
-          
+
+          {loginError && <p className="error-message">{loginError}</p>}
+
           <button type="submit" className="submit-btn">
             {isLoginView ? 'Entrar' : 'Cadastrar'}
           </button>
         </form>
-        
+
         <div className="toggle-container">
           <button 
             type="button" 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FAQ from './pages/FAQ/FAQ';
 import LoginECadastro from './pages/LOGINeCADASTRO/LoginECadastro';
 import { ContatosProvider } from './contexts/ContatosContext';
@@ -10,84 +10,72 @@ import './global.css';
 import ConfigScreen from './pages/ConfigScreen/ConfigScreen';
 import NotificationScreen from './pages/NotificationScreen/Notification';
 import Perfil from './pages/Perfil/Perfil';
-// Criação das rotas do aplicativo
-const router = createBrowserRouter([
-
-  {
-    path: "/login",
-    element: (
-      <div className="app-container">
-        <LoginECadastro />
-      </div>
-    ),
-  },
-
-  {
-    path: "/monitoramento",
-    element: (
-      <div className="app-container">
-        <Sidebar />
-        <Monitoramento />
-      </div>
-    ),
-  },
-
-  {
-    path: "/contatos",
-    element: (
-      <ContatosProvider>
-        <div className="app-container">
-          <Sidebar />
-          <MainApp page="Contatos" />
-        </div>
-      </ContatosProvider>
-    ),
-  },
-
-  {
-    path: "/notifications",
-    element: (
-      <div className="app-container">
-        <Sidebar />
-        <NotificationScreen />
-      </div>
-    ),
-  },
-
-  {
-    path: "/perfil",
-    element: (
-      <div className="app-container">
-        <Sidebar />
-        <Perfil />
-      </div>
-    ),
-  },
-
-  {
-    path: "/faq",
-    element: (
-      <div className="app-container">
-        <Sidebar />
-        <FAQ />
-      </div>
-    ),
-  },
-
-  {
-    path: "/config",
-    element: (
-      <div className="app-container">
-        <Sidebar />
-        <ConfigScreen />
-      </div>
-    ),
-  },
-
-]);
+import LandingPageScreen from './pages/LandingPage/LandingPageScreen';
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={
+          <div className="app-container">
+            <LandingPageScreen />
+          </div>
+        } />
+
+        <Route path="/login" element={
+          <div className="app-container">
+            <LoginECadastro />
+          </div>
+        } />
+
+        <Route path="/monitoramento" element={
+          <div className="app-container">
+            <Sidebar />
+            <Monitoramento />
+          </div>
+        } />
+
+        <Route path="/contatos" element={
+          <ContatosProvider>
+            <div className="app-container">
+              <Sidebar />
+              <MainApp page="Contatos" />
+            </div>
+          </ContatosProvider>
+        } />
+
+        <Route path="/notifications" element={
+          <div className="app-container">
+            <Sidebar />
+            <NotificationScreen />
+          </div>
+        } />
+
+        <Route path="/perfil" element={
+          <div className="app-container">
+            <Sidebar />
+            <Perfil />
+          </div>
+        } />
+
+        <Route path="/faq" element={
+          <div className="app-container">
+            <Sidebar />
+            <FAQ />
+          </div>
+        } />
+
+        <Route path="/config" element={
+          <div className="app-container">
+            <Sidebar />
+            <ConfigScreen />
+          </div>
+        } />
+
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

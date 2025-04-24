@@ -6,19 +6,27 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Como configurar os sensores?",
-      answer: "Exemplo de resposta sobre sensores."
+      question: "Qual o critério para detectar um alerta?",
+      answer: "Nosso sistema atualiza algoritmos de visão computacional para identificar quedas bruscas e posturas incomuns."
     },
     {
-      question: "Como visualizar as câmeras?",
-      answer: "Exemplo de resposta sobre câmeras."
+      question: "Quanto tempo leva para o sistema enviar um alerta?",
+      answer: "A detecção ocoree em tempo real (menos de 2 segundos), com a notificação imediata aos responsáveis através do app e SMS."
     },
     {
-      question: "Como ativar os alarmes?",
-      answer: "Exemplo de resposta sobre alarmes."
+      question: "Quais emergências o sistema pode detectar?",
+      answer: "Detecção de quedas, imodidade prolongada, convulsões, sangramentos intensos e padrões respiratórios anormais."
     },
     {
-      question: "Como acessar relatórios?",
+      question: "Como confirmar um falso positivo?",
+      answer: "Após detecção, o paciente tem 30 segundos para cancelar o alerta. Caso não responda, é acionado o protocolo de emergência."
+    },
+    {
+      question: "O sistema armazena imagens dos pacientes?",
+      answer: "Exemplo de resposta sobre relatórios."
+    },
+    {
+      question: "Como entrar em contato com a equipe de suporte?",
       answer: "Exemplo de resposta sobre relatórios."
     }
   ];
