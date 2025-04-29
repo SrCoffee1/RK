@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importando useNavigate
+import { useNavigate } from 'react-router-dom';
 import './LoginECadastro.css';
 
 function LoginECadastro() {
@@ -7,7 +7,7 @@ function LoginECadastro() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
-  const navigate = useNavigate(); // Inicializando o useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +17,16 @@ function LoginECadastro() {
       if (username === 'RiskAlert' && password === '123') {
         console.log('Login realizado com sucesso!');
         setLoginError('');
-        navigate('/monitoramento');  // Redirecionando para a tela de monitoramento
+        // Redirecionando para o formulário ao invés de monitoramento
+        navigate('/formulario');
       } else {
         console.log('Credenciais inválidas');
         setLoginError('Usuário ou senha incorretos.');
       }
     } else {
       console.log('Cadastro realizado');
+      // Após cadastro, você pode redirecionar para o formulário também
+      navigate('/formulario');
     }
   };
 
