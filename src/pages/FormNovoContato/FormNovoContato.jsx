@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useContatos } from '../../contexts/ContatosContext';
+import { useTheme } from '../../contexts/ThemeContext'; // Adjust the path as needed
 import './FormNovoContato.css';
 
 function FormNovoContato({ mudarTela }) {
   const { adicionarContato } = useContatos();
+  const { isDarkTheme } = useTheme(); // Use the theme context
   const [novoContato, setNovoContato] = useState({
     nome: '',
     sobrenome: '',
@@ -35,7 +37,7 @@ function FormNovoContato({ mudarTela }) {
   };
 
   return (
-    <div className="form-novo-contato">
+    <div className={`form-novo-contato ${isDarkTheme ? 'dark' : 'light'}`}>
       <button onClick={() => mudarTela('lista')} className='botao-voltar'> &lt; </button>
 
       <form onSubmit={handleSubmit}>
@@ -47,7 +49,7 @@ function FormNovoContato({ mudarTela }) {
               height="40"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="white"
+              stroke={isDarkTheme ? "white" : "#333"}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"

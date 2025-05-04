@@ -1,129 +1,225 @@
-/* Reutilizando os estilos do Formulario.css */
+/* FormularioEdit.css com suporte para tema claro/escuro */
+
 .form-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transform: scale(0.3); /* 90% do tamanho original */
-  }
-  
-  .form-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #444;
-    font-size: 2rem;
-  }
-  
-  .section-title {
-    padding: 0.75rem 1rem;
-    margin: 1.5rem 0 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    color: #444;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #555;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="date"],
-  .form-group input[type="time"],
-  .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border 0.3s;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #0066ff;
-  }
-  
-  .full-width {
-    grid-column: 1 / -1;
-  }
-  
-  .radio-group {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .radio-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .submit-btn {
-    background-color: #0066ff;
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 1.5rem;
-    width: 100%;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0052cc;
-  }
-  
-  .form-footer {
-    margin-top: 2rem;
-    text-align: center;
-    color: #777;
-    font-size: 0.9rem;
-  }
-  
-  /* Estilos específicos para o modo de edição */
-  .button-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .button-group button {
-    flex: 1;
-  }
-  
-  .cancel-btn {
-    background-color: #f5f5f5;
-    color: #444;
-    border: 1px solid #ddd;
-    padding: 0.75rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #e5e5e5;
-  }
-  
-  .success-message {
-    background-color: #e6f7e6;
-    color: #2e7d32;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 500;
-  }
-  
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema claro */
+.form-container.light {
+  background-color: #ffffff;
+  color: #444;
+}
+
+/* Tema escuro */
+.form-container.dark {
+  background-color: #1e1e1e;
+  color: #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+/* Título - tema claro/escuro */
+.light .form-title {
+  color: #444;
+}
+
+.dark .form-title {
+  color: #ffffff;
+}
+
+.section-title {
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Section title - tema claro/escuro */
+.light .section-title {
+  background-color: #f5f5f5;
+  color: #444;
+}
+
+.dark .section-title {
+  background-color: #333;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Labels - tema claro/escuro */
+.light .form-group label {
+  color: #555;
+}
+
+.dark .form-group label {
+  color: #e2e8f0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s, background-color 0.3s, color 0.3s;
+}
+
+/* Inputs - tema claro */
+.light .form-group input[type="text"],
+.light .form-group input[type="date"],
+.light .form-group input[type="time"],
+.light .form-group textarea {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Inputs - tema escuro */
+.dark .form-group input[type="text"],
+.dark .form-group input[type="date"],
+.dark .form-group input[type="time"],
+.dark .form-group textarea {
+  border: 1px solid #444;
+  background-color: #333;
+  color: #e2e8f0;
+}
+
+/* Focus para ambos os temas */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0066ff;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botões */
+.submit-btn {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #0052cc;
+}
+
+/* Botão cancelar - tema claro/escuro */
+.light .cancel-btn {
+  background-color: #f5f5f5;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.dark .cancel-btn {
+  background-color: #333;
+  color: #e2e8f0;
+  border: 1px solid #444;
+}
+
+.cancel-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.light .cancel-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.dark .cancel-btn:hover {
+  background-color: #444;
+}
+
+.form-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+/* Footer - tema claro/escuro */
+.light .form-footer {
+  color: #777;
+}
+
+.dark .form-footer {
+  color: #aaa;
+}
+
+/* Estilos específicos para o modo de edição */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+/* Mensagem de sucesso - tema claro/escuro */
+.light .success-message {
+  background-color: #4dac52;
+  color: #e6f7e6;
+}
+
+.dark .success-message {
+  background-color: #1b4d1b;
+  color: #a5d6a7;
+}
+
+.success-message {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Perfil.css';
+import { useTheme } from '../../contexts/ThemeContext'; // Ajuste o caminho conforme necessário
 
 export default function Perfil() {
   const [user] = useState({
@@ -8,9 +9,11 @@ export default function Perfil() {
     location: 'Não informada',
     profileImage: '/api/placeholder/150/150'
   });
+  
+  const { isDarkTheme } = useTheme(); // Usando o contexto de tema
 
   return (
-    <div className="perfil-container">
+    <div className={`perfil-container ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="perfil-image-container">
         <div className="perfil-image-wrapper">
           <img 

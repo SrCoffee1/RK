@@ -1,15 +1,16 @@
+// NotificationCard.jsx
 import React from 'react';
 import { AlertTriangle, CheckCircle } from 'lucide-react';
 import './Notification.css';
 
-export default function NotificationCard({ type, title, time, content }) {
+export default function NotificationCard({ type, title, time, content, isDarkTheme }) {
   return (
-    <div className={`notification-card ${type === 'risk' ? 'risk' : 'safe'}`}>
+    <div className={`notification-card ${type === 'risk' ? 'risk' : 'safe'} ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="icon-container">
         {type === 'risk' ? (
           <AlertTriangle size={20} className="icon" />
         ) : (
-          <CheckCircle size={20} className="icon check-icon" />
+          <CheckCircle size={20} className={`icon check-icon ${isDarkTheme ? 'dark' : 'light'}`} />
         )}
       </div>
       

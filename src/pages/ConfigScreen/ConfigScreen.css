@@ -5,16 +5,39 @@
   align-items: center;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme */
+.config-container.dark {
+  color: #ffffff;
+}
+
+/* Light theme */
+.config-container.light {
+  color: #1f2937;
 }
 
 .config-box {
   width: 360px;
-  background-color: #2a2a2a;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   border: 5px solid;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Dark theme box */
+.dark .config-box {
+  background-color: #2a2a2a;
   border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+}
+
+/* Light theme box */
+.light .config-box {
+  background-color: #ffffff;
+  border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .config-header {
@@ -29,17 +52,37 @@
 }
 
 .config-header h1 {
-  color: white;
   font-size: 24px;
   font-weight: 500;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme header text */
+.dark .config-header h1 {
+  color: white;
+}
+
+/* Light theme header text */
+.light .config-header h1 {
+  color: #3a81f4;
 }
 
 .config-menu {
-  background-color: #353535;
   padding: 16px;
   border-radius: 8px;
   margin: 0 16px 24px 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark theme menu */
+.dark .config-menu {
+  background-color: #353535;
+}
+
+/* Light theme menu */
+.light .config-menu {
+  background-color: #ebebeb;
 }
 
 .config-option {
@@ -50,15 +93,28 @@
   border: none;
   padding: 14px 10px;
   text-align: left;
-  color: #aaa;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.3s ease;
   border-radius: 6px;
 }
 
-.config-option:hover {
+/* Dark theme option */
+.dark .config-option {
+  color: #aaa;
+}
+
+.dark .config-option:hover {
   background-color: #444;
+}
+
+/* Light theme option */
+.light .config-option {
+  color: #6d6b6b;
+}
+
+.light .config-option:hover {
+  background-color: #c5c5c5;
 }
 
 .config-option span {

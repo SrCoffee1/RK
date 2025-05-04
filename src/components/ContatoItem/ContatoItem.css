@@ -1,12 +1,13 @@
 .contato-item-container {
     position: relative;
+    top: 3rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contato-item {
     margin-left: 20%;
+    margin-bottom: 1rem;
     width: 60%;
-    color: white;
-    background-color: #333333;
     border-radius: 0.375rem;
     padding: 1rem;
     display: flex;
@@ -14,14 +15,30 @@
     justify-content: space-between;
     border-left: 4px solid;
     border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.contato-item:hover {
+/* Estilos para tema escuro */
+.dark .contato-item {
+    color: white;
+    background-color: #333333;
+}
+
+.dark .contato-item:hover {
     background-color: #374151;
 }
 
+/* Estilos para tema claro */
+.light .contato-item {
+    color: #1f2937;
+    background-color: #cbc8c8;
+}
+
+.light .contato-item:hover {
+    background-color: #afafaf;
+}
+
 .contato-avatar {
-    background-color: #4f4f4f;
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
@@ -29,6 +46,17 @@
     align-items: center;
     justify-content: center;
     margin-right: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Avatar para tema escuro */
+.dark .contato-avatar {
+    background-color: #4f4f4f;
+}
+
+/* Avatar para tema claro */
+.light .contato-avatar {
+    background-color: #9ca3af;
 }
 
 .estrela-favorito {
@@ -37,10 +65,29 @@
 
 .contato-nome {
     flex-grow: 1;
+    transition: color 0.3s ease;
+}
+
+/* Cor do nome para tema claro/escuro */
+.dark .contato-nome {
+    color: white;
+}
+
+.light .contato-nome {
+    color: #1f2937;
 }
 
 .botao-opcoes {
-    color: #9ca3af;
     background: transparent;
     border: none;
+    transition: color 0.3s ease;
+}
+
+/* Cor do botão para tema claro/escuro */
+.dark .botao-opcoes {
+    color: #9ca3af;
+}
+
+.light .botao-opcoes {
+    color: #4b5563;
 }

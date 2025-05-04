@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Sidebar.css';
 import * as Icons from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const SidebarItem = ({ to, icon, text, isExpanded, isActive }) => (
   <Link
@@ -17,12 +18,13 @@ const SidebarItem = ({ to, icon, text, isExpanded, isActive }) => (
 const Sidebar = () => {
   const location = useLocation();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  // Use the theme context instead of local state
+  const { isDarkTheme, toggleTheme } = useTheme();
 
   const toggleSidebar = () => setIsExpanded(!isExpanded);
-  const toggleTheme = (e) => {
+  const handleThemeToggle = (e) => {
     e.stopPropagation();
-    setIsDarkTheme(!isDarkTheme);
+    toggleTheme();
   };
 
   const routeTop = [
@@ -45,7 +47,7 @@ const Sidebar = () => {
           <div className="toggle-icon-container">
             <div className="toggle-icon"><Icons.ChevronRight size={20} /></div>
             {isExpanded && (
-              <div className="theme-icon" onClick={toggleTheme}>
+              <div className="theme-icon" onClick={handleThemeToggle}>
                 {isDarkTheme ? <Icons.Sun size={20} /> : <Icons.Moon size={20} />}
               </div>
             )}

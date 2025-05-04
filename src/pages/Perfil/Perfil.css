@@ -4,7 +4,17 @@
   align-items: center;
   padding-top: 2rem;
   min-height: 100vh;
-  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema escuro */
+.perfil-container.dark {
+  color: #ffffff;
+}
+
+/* Tema claro */
+.perfil-container.light {
+  color: #1f2937;
 }
 
 .perfil-image-container {
@@ -33,21 +43,52 @@
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+/* Cores do nome para tema escuro/claro */
+.dark .perfil-name {
+  color: #ffffff;
+}
+
+.light .perfil-name {
+  color: #1f2937;
 }
 
 .info-card {
   width: 92%;
   max-width: 28rem;
-  background-color: #25282c;
   border-radius: 0.5rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cores do card para tema escuro/claro */
+.dark .info-card {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.light .info-card {
+  background-color: #fbfbfb;
+  color: #1f2937;
 }
 
 .info-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Cores do título para tema escuro/claro */
+.dark .info-title {
+  color: #ffffff;
+}
+
+.light .info-title {
+  color: #1f2937;
 }
 
 .info-row {
@@ -60,16 +101,35 @@
 }
 
 .info-label {
-  color: #9ca3af;
   width: 8rem;
+  transition: color 0.3s ease;
+}
+
+/* Cores das labels para tema escuro/claro */
+.dark .info-label {
+  color: #9ca3af;
+}
+
+.light .info-label {
+  color: #6b7280;
 }
 
 .info-value {
   flex: 1;
+  transition: color 0.3s ease;
+}
+
+/* Cores dos valores para tema escuro/claro */
+.dark .info-value {
+  color: #ffffff;
+}
+
+.light .info-value {
+  color: #1f2937;
 }
 
 .editar-perfil-button {
-  margin-top: 15%;
+  margin-top: 12%;
   width: 92%;
   max-width: 28rem;
   background: linear-gradient(to bottom, #3a81f4, #1e3b8b);
@@ -80,6 +140,7 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease;
 }
 
 .editar-perfil-button:hover {

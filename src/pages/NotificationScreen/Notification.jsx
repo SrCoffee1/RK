@@ -1,8 +1,12 @@
+// NotificationScreen.jsx
 import React from 'react';
 import NotificationCard from './NotificationCard';
 import './Notification.css';
+import { useTheme } from '../../contexts/ThemeContext'; // Importando o contexto de tema
 
 export default function NotificationScreen() {
+  const { isDarkTheme } = useTheme(); // Usando o hook de tema
+
   const notifications = [
     {
       type: 'risk',
@@ -37,7 +41,7 @@ export default function NotificationScreen() {
   ];
 
   return (
-    <div className="notification-screen">
+    <div className={`notification-screen ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="notification-list">
         {notifications.map((notification, index) => (
           <NotificationCard 
@@ -46,12 +50,13 @@ export default function NotificationScreen() {
             title={notification.title}
             time={notification.time}
             content={notification.content}
+            isDarkTheme={isDarkTheme} // Passando a prop de tema
           />
         ))}
 
         {/* Empty placeholder cards at the bottom like in the image */}
-        <div className="placeholder-card" />
-        <div className="placeholder-card placeholder-card-faded" />
+        <div className={`placeholder-card ${isDarkTheme ? 'dark' : 'light'}`} />
+        <div className={`placeholder-card placeholder-card-faded ${isDarkTheme ? 'dark' : 'light'}`} />
       </div>
     </div>
   );

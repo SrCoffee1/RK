@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CameraItem from '../../components/CameraItem/CameraItem';
 import StatusCamera from '../../components/StatusCamera/StatusCamera';
 import './Monitoramento.css';
+import { useTheme } from '../../contexts/ThemeContext'; // Importando o contexto de tema
 
 import { obterStatusCameras } from '../../utils/api';
 
@@ -18,6 +19,9 @@ const Monitoramento = () => {
     2: 'Câmera 02',
     3: 'Câmera 03'
   });
+
+  // Usando o hook de tema
+  const { isDarkTheme } = useTheme();
 
   useEffect(() => {
     const buscarDados = async () => {
@@ -54,12 +58,12 @@ const Monitoramento = () => {
   };
 
   return (
-    <div className="monitoramento-container">
-      <div className="camera-principal">
-        <div className="camera-header">
+    <div className={`monitoramento-container ${isDarkTheme ? 'dark' : 'light'}`}>
+      <div className={`camera-principal ${isDarkTheme ? 'dark' : 'light'}`}>
+        <div className={`camera-header ${isDarkTheme ? 'dark' : 'light'}`}>
           <h2>{nomesCameras[cameraAtual]}</h2>
           <div className="camera-header-direita">
-            <button className="botao-editar" onClick={renomearCamera}>
+            <button className={`botao-editar ${isDarkTheme ? 'dark' : 'light'}`} onClick={renomearCamera}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
@@ -68,8 +72,8 @@ const Monitoramento = () => {
           </div>
         </div>
 
-        <div className="camera-visualizacao">
-          <button className="controle-camera anterior" onClick={() => mudarCamera('anterior')}>
+        <div className={`camera-visualizacao ${isDarkTheme ? 'dark' : 'light'}`}>
+          <button className={`controle-camera anterior ${isDarkTheme ? 'dark' : 'light'}`} onClick={() => mudarCamera('anterior')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
@@ -79,34 +83,34 @@ const Monitoramento = () => {
             <CameraItem cameraId={cameraAtual} />
           </div>
 
-          <button className="controle-camera proximo" onClick={() => mudarCamera('proximo')}>
+          <button className={`controle-camera proximo ${isDarkTheme ? 'dark' : 'light'}`} onClick={() => mudarCamera('proximo')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
         </div>
 
-        <div className="controles-reprodutor">
+        <div className={`controles-reprodutor ${isDarkTheme ? 'dark' : 'light'}`}>
           <div className="controles-grupo">
-            <button className="botao-controle">
+            <button className={`botao-controle ${isDarkTheme ? 'dark' : 'light'}`}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="6" y="4" width="4" height="16"></rect>
                 <rect x="14" y="4" width="4" height="16"></rect>
               </svg>
             </button>
-            <div className="barra-progresso">
-              <div className="progresso-atual"></div>
+            <div className={`barra-progresso ${isDarkTheme ? 'dark' : 'light'}`}>
+              <div className={`progresso-atual ${isDarkTheme ? 'dark' : 'light'}`}></div>
             </div>
           </div>
           <div className="controles-direita">
-            <button className="botao-volume">
+            <button className={`botao-volume ${isDarkTheme ? 'dark' : 'light'}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                 <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
               </svg>
             </button>
-            <button className="botao-fullscreen">
+            <button className={`botao-fullscreen ${isDarkTheme ? 'dark' : 'light'}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m10 0h3a2 2 0 0 0 2-2v-3" />
               </svg>
@@ -117,26 +121,26 @@ const Monitoramento = () => {
 
       <div className="cameras-status">
         <div className="status-row">
-          <div className={`camera-status-item ${cameraAtual === 1 ? 'atual' : ''}`}>
+          <div className={`camera-status-item ${cameraAtual === 1 ? 'atual' : ''} ${isDarkTheme ? 'dark' : 'light'}`}>
             <h3>{nomesCameras[1]}</h3>
             <StatusCamera status={statusCameras.camera01} />
           </div>
 
-          <div className={`camera-status-item ${cameraAtual === 2 ? 'atual' : ''}`}>
+          <div className={`camera-status-item ${cameraAtual === 2 ? 'atual' : ''} ${isDarkTheme ? 'dark' : 'light'}`}>
             <h3>{nomesCameras[2]}</h3>
             <StatusCamera status={statusCameras.camera02} />
           </div>
         </div>
 
         <div className="status-row">
-          <div className={`camera-status-item ${cameraAtual === 3 ? 'atual' : ''}`}>
+          <div className={`camera-status-item ${cameraAtual === 3 ? 'atual' : ''} ${isDarkTheme ? 'dark' : 'light'}`}>
             <h3>{nomesCameras[3]}</h3>
             <StatusCamera status={statusCameras.camera03} />
           </div>
 
-          <div className="adicionar-camera">
+          <div className={`adicionar-camera ${isDarkTheme ? 'dark' : 'light'}`}>
             <span>Adicionar câmera</span>
-            <button className="botao-adicionar" onClick={adicionarCamera}>
+            <button className={`botao-adicionar ${isDarkTheme ? 'dark' : 'light'}`} onClick={adicionarCamera}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>

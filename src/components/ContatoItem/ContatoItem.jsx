@@ -1,13 +1,15 @@
 import React from 'react';
 import './ContatoItem.css';
 import { useContatos } from '../../contexts/ContatosContext';
+import { useTheme } from '../../contexts/ThemeContext'; // Importando o contexto de tema
 import MenuOpcoes from '../MenuOpcoes/MenuOpcoes';
 
 function ContatoItem({ contato, mostraMenu }) {
   const { toggleMenu } = useContatos();
+  const { isDarkTheme } = useTheme(); // Usando o hook de tema
 
   return (
-    <div className="contato-item-container">
+    <div className={`contato-item-container ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="contato-item">
         <div className="contato-avatar">
           {contato.favorito && <span className="estrela-favorito">★</span>}

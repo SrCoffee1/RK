@@ -189,3 +189,43 @@
     flex-basis: 100%;
   }
 }
+
+
+/* MODO CLARO */
+
+.form-container.light {
+  color: var(--text-color-light);
+  background-color: var(--bg-light);
+  border-image: linear-gradient(to bottom, #5a9bff, #3a6bc4) 1;
+}
+
+.form-title.light {
+  color: var(--text-color-light);
+  border-bottom: 1px solid var(--form-border-light);
+}
+
+label.light {
+  color: var(--text-color-light);
+}
+
+input.light,
+select.light,
+textarea.light {
+  color: var(--text-color-light);
+  border: 1px solid var(--form-border-light);
+  background-color: var(--input-bg-light);
+}
+
+.section-title.light {
+  color: var(--section-title-light);
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.submit-btn.light {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.form-footer.light {
+  color: var(--footer-text-light);
+}

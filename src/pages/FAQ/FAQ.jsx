@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './FAQ.css';
-
+import { useTheme } from '../../contexts/ThemeContext'; // Adjust the path as needed
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { isDarkTheme } = useTheme(); // Use the theme context
 
   const faqs = [
     {
@@ -36,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq-container">
+    <div className={`faq-container ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="faq-content">
         <h1 className="faq-title">FAQs</h1>
 

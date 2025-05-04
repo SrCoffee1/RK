@@ -1,6 +1,17 @@
 body {
-    background: #202127;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-  }
-  
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Define os estilos globais para o tema escuro */
+body.dark-theme {
+  background: #202127; /* Mantém a cor original do fundo escuro */
+  color: #ffffff;
+}
+
+/* Define os estilos globais para o tema claro */
+body.light-theme {
+  background-color: #ebebeb;
+  color: #1f2937;
+}

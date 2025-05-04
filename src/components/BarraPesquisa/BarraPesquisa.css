@@ -3,12 +3,23 @@
     position: relative;
     margin-left: 25%;
     width: 50%;
-    background-color: #333333;
     border-radius: 0.375rem;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para tema escuro */
+.barra-pesquisa.dark {
+    background-color: #333333;
+}
+
+/* Estilos para tema claro */
+.barra-pesquisa.light {
+    background-color: #cbc8c8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .icone-pesquisa {
@@ -23,5 +34,25 @@
     border: none;
     outline: none;
     width: 100%;
+    transition: color 0.3s ease;
+}
+
+/* Cor do texto do campo de pesquisa para tema escuro */
+.dark .campo-pesquisa {
     color: #d1d5db;
+}
+
+/* Cor do texto do campo de pesquisa para tema claro */
+.light .campo-pesquisa {
+    color: #4b5563;
+}
+
+/* Cor do placeholder para tema escuro */
+.dark .campo-pesquisa::placeholder {
+    color: #9ca3af;
+}
+
+/* Cor do placeholder para tema claro */
+.light .campo-pesquisa::placeholder {
+    color: #6b7280;
 }

@@ -1,6 +1,17 @@
 .faq-container {
   min-height: 100vh;
   padding: 3rem 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme */
+.faq-container.dark {
+  color: #ffffff;
+}
+
+/* Light theme */
+.faq-container.light {
+  color: #1f2937;
 }
 
 .faq-content {
@@ -12,17 +23,37 @@
   font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
-  color: white;
   margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme title */
+.dark .faq-title {
+  color: white;
+}
+
+/* Light theme title */
+.light .faq-title {
+  color: #1f2937;
 }
 
 .faq-description {
-  color: #e2e8f0;
   text-align: center;
   margin-bottom: 3rem;
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme description */
+.dark .faq-description {
+  color: #e2e8f0;
+}
+
+/* Light theme description */
+.light .faq-description {
+  color: #4b5563;
 }
 
 .faq-list > * + * {
@@ -33,6 +64,7 @@
   border-left: 4px solid;
   border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .faq-question-button {
@@ -46,19 +78,40 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.faq-active {
+/* Dark theme button backgrounds */
+.dark .faq-active {
   background-color: #424242;
 }
 
-.faq-inactive {
+.dark .faq-inactive {
   background-color: #303030;
 }
 
+/* Light theme button backgrounds */
+.light .faq-active {
+  background-color: #d9d9d9;
+}
+
+.light .faq-inactive {
+  background-color: #cbc8c8;
+}
+
 .faq-question-text {
-  color: white;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme question text */
+.dark .faq-question-text {
+  color: white;
+}
+
+/* Light theme question text */
+.light .faq-question-text {
+  color: #1f2937;
 }
 
 .faq-icon {
@@ -69,11 +122,32 @@
 .faq-icon-svg {
   width: 1.5rem;
   height: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme icon */
+.dark .faq-icon-svg {
   color: white;
 }
 
+/* Light theme icon */
+.light .faq-icon-svg {
+  color: #1f2937;
+}
+
 .faq-answer {
-  background-color: #424242;
   padding: 1rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme answer */
+.dark .faq-answer {
+  background-color: #424242;
   color: #e2e8f0;
+}
+
+/* Light theme answer */
+.light .faq-answer {
+  background-color: #d9d9d9;
+  color: #4b5563;
 }

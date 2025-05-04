@@ -1,89 +1,159 @@
 /* General layout */
 .notification-screen {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 100vh;
-    margin-left: 15%;
-    color: white;
-    padding: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100vh;
+  margin-left: 15%;
+  padding: 3rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema escuro - padrão */
+.notification-screen.dark {
+  color: white;
   
-  /* Back button */
-  .back-button-container {
-    margin-bottom: 1rem;
-  }
-  
-  .back-button {
-    padding: 0.5rem;
-    border-radius: 9999px;
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .back-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Notification list */
-  .notification-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  /* Notification cards */
-  .notification-card {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-  
-  .notification-card.risk {
-  
-    background-color: #f43f5e;
-  }
-  
-  .notification-card.safe {
-    background-color: #1e293b;
-  }
-  
-  .icon-container {
-    margin-top: 0.25rem;
-  }
-  
-  .icon {
-    color: white;
-  }
-  
-  .check-icon {
-    color: #60a5fa;
-  }
-  
-  .notification-content {
-    flex: 1;
-  }
-  
-  .notification-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.25rem;
-  }
-  
-  .notification-title {
-    font-weight: 500;
-  }
-  
-  .notification-time {
-    font-size: 0.875rem;
-    opacity: 0.8;
-  }
-  
-  .notification-text {
-    font-size: 0.875rem;
-    opacity: 0.8;
-  }
+}
+
+/* Tema claro */
+.notification-screen.light {
+  color: #333;
+}
+
+/* Back button */
+.back-button-container {
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema escuro - padrão */
+.back-button.dark {
+  color: white;
+}
+
+/* Tema claro */
+.back-button.light {
+  color: #333;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.back-button.light:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Notification list */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Notification cards */
+.notification-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+/* Tema escuro - padrão */
+.notification-card.risk.dark {
+  background-color: #ea1135;
+}
+
+.notification-card.safe.dark {
+  background-color: #404040;
+}
+
+/* Tema claro */
+.notification-card.risk.light {
+  background-color: #ea1135;
+  color: #ffffff;
+}
+
+.notification-card.safe.light {
+  background-color: #fbfbfb;
+  color: #1f2937;
+}
+
+.icon-container {
+  margin-top: 0.25rem;
+}
+
+.icon {
+  font-size: 1.9rem;
+  color: white;
+  top: 0.6rem;
+  position: relative;
+}
+
+/* No tema claro, o ícone de alerta também deve ser de cor diferente */
+.notification-card.risk.light .icon {
+  color: #fdfdfd;
+}
+
+.check-icon {
+  color: #60a5fa;
+}
+
+.check-icon.light {
+  color: #3b82f6;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.notification-title {
+  font-weight: 500;
+}
+
+.notification-time {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.notification-text {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Placeholder cards */
+.placeholder-card {
+  height: 5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Tema escuro - padrão */
+.placeholder-card.dark {
+  background-color: #303030;
+}
+
+/* Tema claro */
+.placeholder-card.light {
+  background-color: #cbc8c8;
+}
+
+.placeholder-card-faded {
+  opacity: 0.5;
+}

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useFormulario } from "../../contexts/FormularioContext";
-import "./FormularioEdit.css"; // Reuso do CSS do formulário ou crie um específico
+import { useTheme } from "../../contexts/ThemeContext"; // Importando o contexto de tema
+import "./FormularioEdit.css";
 
 const FormularioEdit = ({ onClose }) => {
   const { formData: savedFormData, updateFormData } = useFormulario();
   const [formData, setFormData] = useState(savedFormData);
   const [showSuccess, setShowSuccess] = useState(false);
+  const { isDarkTheme } = useTheme(); // Usando o contexto de tema
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,7 +33,7 @@ const FormularioEdit = ({ onClose }) => {
   };
 
   return (
-    <div className="form-container">
+    <div className={`form-container ${isDarkTheme ? 'dark' : 'light'}`}>
       <h1 className="form-title">EDITAR FORMULÁRIO</h1>
       {showSuccess && (
         <div className="success-message">

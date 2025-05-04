@@ -8,6 +8,7 @@ import MainApp from './MainApp';
 import Monitoramento from './pages/Monitoramento/Monitoramento';
 import Sidebar from './components/SidebarPackage/Sidebar';
 import './global.css';
+import { ThemeProvider } from './contexts/ThemeContext';
 import ConfigScreen from './pages/ConfigScreen/ConfigScreen';
 import NotificationScreen from './pages/NotificationScreen/Notification';
 import Perfil from './pages/Perfil/Perfil';
@@ -16,6 +17,7 @@ import Formulario from './pages/FormularioPage/Formulario';
 
 function App() {
   return (
+    <ThemeProvider>
     <FormularioProvider>
       <BrowserRouter>
         <Routes>
@@ -90,6 +92,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </FormularioProvider>
+    </ThemeProvider>
   );
 }
 
