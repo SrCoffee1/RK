@@ -9,8 +9,8 @@
 
 .form-container {
   color: whitesmoke;
-  top: -150px;
-  max-width: 1200px;
+  top: 0px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
   background-color: #303030;
@@ -20,7 +20,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  transform: scale(0.65);
+  transform: scale(0.80);
 }
 
 .form-container::before {

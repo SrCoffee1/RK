@@ -20,7 +20,7 @@ function LoginECadastro() {
         console.log('Login realizado com sucesso!');
         setLoginError('');
         // Redirecionando para o formulário ao invés de monitoramento
-        navigate('/formulario');
+        navigate('/monitoramento');
       } else {
         console.log('Credenciais inválidas');
         setLoginError('Usuário ou senha incorretos.');
