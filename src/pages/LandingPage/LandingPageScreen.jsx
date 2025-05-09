@@ -52,7 +52,6 @@ function LandingPageScreen() {
           </p>
         </div>
 
-
         {/* Seção Sobre */}
         <div id="sobre" className="container-sobre">
           <h2 className="titulo-sobre">Sobre nós</h2>
@@ -60,7 +59,6 @@ function LandingPageScreen() {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, neque commodi architecto deleniti nesciunt tempore molestiae earum delectus velit iure doloremque fugiat eius culpa beatae animi, nam unde sequi a.
           </p>
         </div>
-
 
         {/* Seção Contato */}
         <div id="contato" className="container-contato">
@@ -75,24 +73,23 @@ function LandingPageScreen() {
                   </svg>
                 </div>
                 <div className="info-text">
-                <h3>EMAIL</h3>
-                <p>riskalert@gmail.com</p>
+                  <h3>EMAIL</h3>
+                  <p>riskalert@gmail.com</p>
                 </div>
               </div>
-              
-              <div className="info-item">
-          <div className="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <div className="info-text">
-            <h3>HORÁRIO DE FUNCIONAMENTO</h3>
 
-          </div>
-        </div>
-          </div>
+              <div className="info-item">
+                <div className="info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div className="info-text">
+                  <h3>HORÁRIO DE FUNCIONAMENTO</h3>
+                </div>
+              </div>
+            </div>
             
             <div className="contact-form">
               <h2>CONTATE-NOS</h2>
@@ -137,9 +134,39 @@ function LandingPageScreen() {
       </main>
 
       {/* Rodapé */}
-      <footer className="rodape">
-        <div className="informacoes-rodape">
-          <p>&copy; 2025 RiskAlert. Todos os direitos reservados.</p>
+      <footer>
+        <div className="footer_info">
+          <div className="footer_width about">
+            <h2>Sobre</h2>
+            <p>Bem-vindo à RiskAlert, onde tecnologia e cuidado caminham juntos para proteger o que mais importa.</p>
+            <div className="social-media">
+              <ul>
+                <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer_width link">
+            <h2>Links</h2>
+            <ul>
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#contato">Contato</a></li>
+              <li><a href="/login">Entrar</a></li>
+            </ul>
+          </div>
+          <div className="footer_width contact">
+            <h2>Contato</h2>
+            <ul>
+              <li><span><i className="fas fa-map-marker-alt"></i></span><p>123 Rua Exemplo, São Paulo, Brasil</p></li>
+              <li><span><i className="fas fa-envelope"></i></span><a href="mailto:riskalert@gmail.com">riskalert@gmail.com</a></li>
+              <li><span><i className="fas fa-phone-volume"></i></span><a href="tel:+550000000000">+55 00 0000-0000</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="copy-right">
+          <p>&copy; COPYRIGHT 2025 ALL RIGHTS RESERVED.</p>
         </div>
       </footer>
     </div>
