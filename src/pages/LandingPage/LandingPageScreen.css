@@ -1,11 +1,28 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#home {
+  scroll-margin-top: 120px; /* margem maior para a seção Home */
+}
+
+#sobre {
+  scroll-margin-top: 50px; /* margem média para a seção Sobre */
+}
+
+#contato {
+  scroll-margin-top: 200px; /* margem menor para a seção Contato */
+}
+
+
 /* Estilos gerais */
 .aplicativo {
   width: 100%;
   min-height: 100vh;
-  color: white;
+  color: rgb(39, 39, 39);
   display: flex;
   flex-direction: column;
-  background-color: #06090f;
+  background-color: #ffffff;
   text-align: center;
   padding-top: 60px;
 }
@@ -21,14 +38,13 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #06090f;
   z-index: 10; /* Garantindo que o cabeçalho fique acima de outros conteúdos */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo fixo */
 .logo {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 25px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -51,7 +67,7 @@
 }
 
 .navegacao ul li a {
-  color: white;
+  color: #202020;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -88,14 +104,14 @@
 }
 
 .imagem-boas-vindas {
-  width: 50%;
+  width: 65%;
   height: auto;
   object-fit: contain;
   margin-bottom: 20px;
 }
 
 .titulo-boas-vindas {
-  color: white;
+  color: #202020;
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -105,7 +121,7 @@
 .texto-boas-vindas {
   font-size: 21px;
   line-height: 1.6;
-  color: #bdbdbd;
+  color: #6e6e6e;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -113,149 +129,325 @@
 
 
 .titulo-boas-vindas,
-.titulo-sobre,
-.titulo-contato {
+.titulo-sobre{
   position: relative;
   display: inline-block;
   padding-bottom: 10px; /* Ajuste a distância entre o título e a linha */
 }
 
 .titulo-boas-vindas::after,
-.titulo-sobre::after,
-.titulo-contato::after {
+.titulo-sobre::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 3px; /* Espessura da linha */
-  background-color: #0094ff; /* Cor da linha */
+  background-image: linear-gradient(to bottom, #3a81f4, #1e3b8b);
+}
+
+.titulo-contato {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* Ajuste a distância entre o título e a linha */
+}
+
+.titulo-contato::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 51.3rem;
+  width: 12%;
+  height: 3px; /* Espessura da linha */
+  background-image: linear-gradient(to bottom, #3a81f4, #1e3b8b);
 }
 
 
+/* SOBRE NÓS */
 
-
-/* Estilos para seções (Sobre e Contato) */
-.container-sobre, .container-contato {
-  text-align: center;
-  max-width: 700px;
-  margin: 90px auto;
-}
-
-.titulo-sobre, .titulo-contato {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.texto-sobre, .texto-contato {
-  font-size: 18px;
-  color: rgb(255, 255, 255);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.container-contato .contact-card {
-  width: 100%; /* Ajuste a largura para 100% ou o valor que preferir */
-  max-width: 900px; /* Isso limita a largura máxima */
+.container-sobre {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin: 0 auto; /* Isso centraliza o elemento */
-  transform: scale(1.20);
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
 }
 
-
-.container-contato .contact-info {
-  background-color: #202127;
-  padding: 40px 20px;
-  color: white;
-  width: 50%;
+.conteudo-sobre {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.container-contato .info-item {
-  display: flex;
-  align-items: flex-start;
+.texto-sobre {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px;
+}
+
+.titulo-sobre {
+  font-size: 40px;
+  font-weight: bold;
+  color: #202020;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.texto-sobre p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6e6e6e;
   margin-bottom: 30px;
 }
 
-.container-contato .info-icon {
-  margin-right: 15px;
-  color: white;
-}
-
-.container-contato .info-text h3 {
+.botao-ler-mais {
+  background-image: linear-gradient(to bottom, #3a81f4, #1e3b8b);
+  color: #ffffff;
+  padding: 12px 35px;
   font-size: 16px;
   font-weight: bold;
-  margin: 0 0 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.container-contato .info-text p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
+.botao-ler-mais:hover {
+  background-image: linear-gradient(to bottom, #2f68c5, #14285e); /* Gradiente no fundo */
+  border-color: #1e3b8b; /* Borda com cor sólida no hover */
 }
 
-.container-contato .contact-form {
-  padding: 40px;
-  width: 60%;
-  background-color: #424242;
-  color: #ffffff;
+.imagem-sobre {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container-contato .contact-form h2 {
-  margin-top: 0;
-  margin-bottom: 30px;
-  color: #ffffff;
-  text-align: center;
+.icone-camera {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsividade para a seção Sobre */
+@media (max-width: 900px) {
+  .conteudo-sobre {
+    flex-direction: column;
+  }
+  
+  .texto-sobre {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .titulo-sobre {
+    text-align: center;
+  }
+  
+  .imagem-sobre {
+    width: 100%;
+  }
+  
+  .icone-camera {
+    max-width: 80%;
+  }
+}
+
+
+/* CONTATE-NOS */
+
+/* Estilos gerais para a seção de contato */
+.container-contato {
+  margin-bottom: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.painel-contato {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+}
+
+/* Lado esquerdo - Informações de contato */
+.lado-info {
+  background-color: #3a81f4;
+  color: white;
+  padding: 3rem 2rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;  
+  gap: 9rem;
+}
+
+
+.item-info {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+}
+
+.icone-info {
+  background-color: #f2f2f2;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.icone-info .material-icons {
+  color: #333;
   font-size: 24px;
 }
 
-.container-contato .form-group {
-  margin-bottom: 20px;
+/* Estilo específico para o ícone de localização */
+.icone-info-localizacao {
+  margin-left: 1rem; /* Ajuste de margem se necessário */
 }
 
-.container-contato .form-group input,
-.container-contato .form-group textarea {
+/* Estilo específico para o ícone de telefone */
+.icone-info-telefone {
+  margin-left: 1rem; /* Ajuste específico */
+}
+
+/* Estilo específico para o ícone de email */
+.icone-info-email {
+  margin-left: 1rem; /* Ajuste específico */
+}
+
+
+.texto-info h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+/* Estilo específico para o título da localização */
+.icone-info-localizacao + .texto-info h3 {
+  margin-left: -11.6rem; /* Ajuste específico */
+}
+
+/* Estilo específico para o título do telefone */
+.icone-info-telefone + .texto-info h3 {
+  margin-left: -3.5rem; /* Ajuste específico */
+}
+
+/* Estilo específico para o título do email */
+.icone-info-email + .texto-info h3 {
+  margin-left: -5.9rem; /* Ajuste específico */
+}
+
+.texto-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Lado direito - Formulário */
+.lado-formulario {
+  background-color: white;
+  padding: 3rem 2rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-enviar {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grupo-campo {
   width: 100%;
-  padding: 10px 5px;
+}
+
+.campo-entrada,
+.campo-texto {
+  width: 100%;
+  padding: 0.75rem 0;
   border: none;
-  border-bottom: 1px solid #ffffff;
-  font-size: 16px;
-  outline: none;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 1rem;
+  background-color: transparent;
   transition: border-color 0.3s;
+  outline: none;
 }
 
-.container-contato .form-group input:focus,
-.container-contato .form-group textarea:focus {
-  border-color: #0094ff;
-}
-
-.container-contato .form-group textarea {
-  resize: vertical;
+.campo-texto {
   min-height: 100px;
+  resize: vertical;
 }
 
-.container-contato .submit-btn {
-  background-color: #2f3453;
+.campo-entrada:focus,
+.campo-texto:focus {
+  border-bottom-color: #2962ff;
+}
+
+.botao-enviar {
+  display: block;
+  width: fit-content;
+  padding: 0.75rem 2.5rem;
+  background-image: linear-gradient(to bottom, #3a81f4, #1e3b8b); /* Gradiente no fundo */
   color: white;
-  border: none;
-  padding: 12px 0;
-  font-size: 16px;
-  font-weight: bold;
-  width: 100%;
+  border: 2px solid transparent; /* Borda transparente por padrão */
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s; /* Transição de cor de fundo e borda */
+  align-self: center;
+  margin-right: 32.7rem;
+  margin-top: 6rem;
+  font-weight: 500;
 }
 
-.container-contato .submit-btn:hover {
-  background-color: #0094ff;
+.botao-enviar:hover {
+  background-image: linear-gradient(to bottom, #2f68c5, #14285e); /* Gradiente no fundo */
+  border-color: #1e3b8b; /* Borda com cor sólida no hover */
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .painel-contato {
+    flex-direction: column;
+  }
+  
+  .lado-info,
+  .lado-formulario {
+    width: 100%;
+  }
+}
+
+
+
+/* RODAPÉ */
 
 a {
   text-decoration: none;
@@ -373,114 +565,5 @@ footer {
   .footer_info {
       flex-direction: column;
   }
-}
-
-
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .navegacao ul {
-    position: relative;
-    top: auto;
-    right: auto;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .imagem-boas-vindas {
-    width: 80%;
-    height: auto;
-  }
-
-  .titulo-boas-vindas {
-    font-size: 30px;
-  }
-
-  .texto-boas-vindas {
-    font-size: 18px;
-  }
-
-  .container-boas-vindas {
-    padding: 20px;
-  }
-
-  .social-links li {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .rodape {
-    padding: 30px 0;
-  }
-
-  /* Ajustes para a seção de Contato */
-  .container-contato .contact-card {
-    flex-direction: column;
-  }
-
-  .container-contato .contact-info,
-  .container-contato .contact-form {
-    width: 100%;
-  }
-
-  /* Ajustes para a seção "Sobre" */
-  .container-sobre {
-    padding: 30px 15px;
-    max-width: 100%; /* Garante que o conteúdo ocupe toda a largura possível */
-    margin-top: 60px; /* Ajuste para não sobrepor o cabeçalho */
-  }
-
-  .titulo-sobre {
-    font-size: 28px;
-  }
-
-  .texto-sobre {
-    font-size: 16px;
-  }
-
-  .container-sobre .icone-sobre {
-    font-size: 35px;
-  }
-}
-
-
-/* Estilos para a seção de "Sobre" */
-
-.container-sobre {
-  text-align: center;
-  max-width: 1600px; /* Aumentado para um valor muito maior */
-  margin: 100px auto;
-  background-color: #202127; /* Cor de fundo alinhada com o resto do site */
-  padding: 80px 60px; /* Aumentando o padding para um maior espaçamento interno */
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.titulo-sobre {
-  font-size: 32px;
-  font-weight: bold;
-  color: #ffffff; /* Cor azul, que combina com os links de navegação */
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.texto-sobre {
-  font-size: 18px;
-  color: #cacaca;
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.container-sobre .icone-sobre {
-  margin-top: 30px;
-  font-size: 40px;
-  color: #0094ff;
-}
-
-.container-sobre .icone-sobre:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 

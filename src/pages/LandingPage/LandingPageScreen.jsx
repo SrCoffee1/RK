@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LandingPageScreen.css';
 import logo from '../../assets/images/Logo.png';
+import cameraIcon from '../../assets/images/LogoTEste.png';
 
 function LandingPageScreen() {
   const [formData, setFormData] = useState({
@@ -54,47 +55,79 @@ function LandingPageScreen() {
 
         {/* Seção Sobre */}
         <div id="sobre" className="container-sobre">
-          <h2 className="titulo-sobre">Sobre nós</h2>
-          <p className="texto-sobre">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, neque commodi architecto deleniti nesciunt tempore molestiae earum delectus velit iure doloremque fugiat eius culpa beatae animi, nam unde sequi a.
-          </p>
+          <div className="conteudo-sobre">
+            <div className="texto-sobre">
+              <h1 className="titulo-sobre">SOBRE NÓS</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Dignissimos, neque commodi architecto deleniti nesciunt 
+                tempore molestiae earum delectus velit iure doloremque 
+                fugiat eius culpa beatae animi, nam unde sequi a.Lorem 
+                ipsum dolor sit amet consectetur, adipisicing elit. 
+                Dignissimos, neque commodi architecto deleniti nesciunt 
+                tempore molestiae earum delectus velit iure doloremque 
+                fugiat eius culpa beatae animi, nam unde sequi a.Lorem 
+                ipsum dolor sit amet consectetur, adipisicing elit. 
+                Dignissimos, neque commodi architecto deleniti nesciunt 
+                tempore molestiae earum delectus velit iure doloremque 
+                fugiat eius culpa beatae animi, nam und.
+              </p>
+              <button className="botao-ler-mais">LER MAIS</button>
+            </div>
+            <div className="imagem-sobre">
+              <img src={cameraIcon} alt="Câmera de segurança" className="icone-camera" />
+            </div>
+          </div>
         </div>
 
         {/* Seção Contato */}
+        <h1 className="titulo-contato">CONTATE-NOS</h1>
         <div id="contato" className="container-contato">
-          <h2 className="titulo-contato"></h2>
-          
-          <div className="contact-card">
-            <div className="contact-info">
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
+          <div className="painel-contato">
+            <div className="lado-info">
+              {/* Ícone de Localização */}
+              <div className="item-info">
+                <div className="icone-info icone-info-localizacao">
+                  {/* Ícone de Localização do Material Icons */}
+                  <span className="material-icons">location_on</span>
                 </div>
-                <div className="info-text">
-                  <h3>EMAIL</h3>
+                <div className="texto-info">
+                  <h3>Localização</h3>
+                  <p>123 Rua Exemplo, Feira de Santana, Brasil</p>
+                </div>
+              </div>
+              
+              {/* Ícone de Telefone */}
+              <div className="item-info">
+                <div className="icone-info icone-info-telefone">
+                  {/* Ícone de Telefone do Material Icons */}
+                  <span className="material-icons">phone</span>
+                </div>
+                <div className="texto-info">
+                  <h3>Telefone</h3>
+                  <p>+55 00 0000-0000</p>
+                </div>
+              </div>
+              
+              {/* Ícone de Email */}
+              <div className="item-info">
+                <div className="icone-info icone-info-email">
+                  {/* Ícone de Email do Material Icons */}
+                  <span className="material-icons">email</span>
+                </div>
+                <div className="texto-info">
+                  <h3>Email</h3>
                   <p>riskalert@gmail.com</p>
                 </div>
               </div>
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
-                <div className="info-text">
-                  <h3>HORÁRIO DE FUNCIONAMENTO</h3>
-                </div>
-              </div>
             </div>
+
             
-            <div className="contact-form">
-              <h2>CONTATE-NOS</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
+            <div className="lado-formulario">
+              <h2 className="titulo-enviar">Envie sua mensagem</h2>
+              
+              <form onSubmit={handleSubmit} className="formulario-contato">
+                <div className="grupo-campo">
                   <input
                     type="text"
                     name="name"
@@ -102,10 +135,11 @@ function LandingPageScreen() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    className="campo-entrada"
                   />
                 </div>
                 
-                <div className="form-group">
+                <div className="grupo-campo">
                   <input
                     type="email"
                     name="email"
@@ -113,20 +147,22 @@ function LandingPageScreen() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    className="campo-entrada"
                   />
                 </div>
                 
-                <div className="form-group">
+                <div className="grupo-campo">
                   <textarea
                     name="message"
-                    placeholder="Deixe aqui a sua mensagem..."
+                    placeholder="Deixe aqui sua mensagem..."
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    className="campo-texto"
                   />
                 </div>
                 
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="botao-enviar">Enviar</button>
               </form>
             </div>
           </div>
