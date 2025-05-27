@@ -2,11 +2,13 @@
     position: absolute;
     right: 0;
     margin-top: 0.5rem;
-    width: 10rem;
+    width: 12rem;
     background-color: #1f2937;
     border-radius: 0.375rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
     z-index: 10;
+    padding-bottom: 0.5rem;
 }
 
 .lista-opcoes {
@@ -22,6 +24,9 @@
     background-color: transparent;
     align-items: center;
     transition: background-color 0.2s;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .opcao-menu:hover {
@@ -30,4 +35,116 @@
 
 .icone-opcao {
     margin-right: 0.5rem;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal do Formulário de Edição */
+.modal-edicao {
+    background: linear-gradient(145deg, #202127, #202127);
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+    border-radius: 16px;
+    padding: 2.5rem;
+    min-width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.form-edicao {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-edicao input {
+    padding: 0.875rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #374151;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-edicao input::placeholder {
+    color: #9ca3af;
+}
+
+.form-edicao input:focus {
+    background-color: #4b5563;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.btn-confirmar {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding: 1.0rem 0.5rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.4);
+}
+
+.btn-confirmar:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+}
+
+.aviso-erro {
+  top: 30px;
+  background-color: #ce0026;
+  border: #ce0026;
+  color: #fafafa;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

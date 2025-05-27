@@ -3,9 +3,7 @@ import React, { createContext, useState, useContext } from 'react';
 const ContatosContext = createContext();
 
 export function ContatosProvider({ children }) {
-  const [contatos, setContatos] = useState([
-    
-  ]);
+  const [contatos, setContatos] = useState([]);
   const [contatoAtivo, setContatoAtivo] = useState(null);
 
   const adicionarContato = (novoContato) => {
@@ -25,9 +23,9 @@ export function ContatosProvider({ children }) {
     setContatoAtivo(null);
   };
 
-  const renomearContato = (id, novoNome) => {
+  const atualizarContato = (id, novosDados) => {
     setContatos(contatos.map(contato =>
-      contato.id === id ? { ...contato, nome: novoNome } : contato
+      contato.id === id ? { ...contato, ...novosDados } : contato
     ));
     setContatoAtivo(null);
   };
@@ -53,7 +51,7 @@ export function ContatosProvider({ children }) {
       contatoAtivo,
       adicionarContato,
       excluirContato,
-      renomearContato,
+      atualizarContato,
       toggleFavorito,
       toggleMenu
     }}>
