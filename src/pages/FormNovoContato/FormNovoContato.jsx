@@ -8,7 +8,7 @@ function FormNovoContato({ mudarTela }) {
   const { isDarkTheme } = useTheme(); // Use the theme context
   const [novoContato, setNovoContato] = useState({
     nome: '',
-    sobrenome: '',
+    genero: '',
     telefone: '',
     email: '',
   });
@@ -28,7 +28,7 @@ function FormNovoContato({ mudarTela }) {
     if (sucesso) {
       setNovoContato({
         nome: '',
-        sobrenome: '',
+        genero: '',
         telefone: '',
         email: '',
       });
@@ -69,14 +69,17 @@ function FormNovoContato({ mudarTela }) {
             onChange={handleInputChange}
             className="campo-formulario"
           />
-          <input
-            type="text"
-            name="sobrenome"
-            placeholder="Sobrenome"
-            value={novoContato.sobrenome}
+          <select
+            name="genero"
+            value={novoContato.genero}
             onChange={handleInputChange}
             className="campo-formulario"
-          />
+          >
+            <option value="">Selecione o gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
           <input
             type="tel"
             name="telefone"

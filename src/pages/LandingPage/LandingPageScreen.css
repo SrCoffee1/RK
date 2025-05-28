@@ -156,7 +156,7 @@ html {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 51.3rem;
+  left: 48.3rem;
   width: 12%;
   height: 3px; /* Espessura da linha */
   background-image: linear-gradient(to bottom, #3a81f4, #1e3b8b);

@@ -1,3 +1,5 @@
+/* Perfil.css com suporte para tema claro/escuro */
+
 /* Container geral da página */
 .perfil-container {
   min-height: 100vh;
@@ -5,13 +7,22 @@
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
-  color: white;
   padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema claro */
+.perfil-container.light {
+  color: #333;
+}
+
+/* Tema escuro */
+.perfil-container.dark {
+  color: white;
 }
 
 /* Card principal */
 .perfil-card {
-  background-color: #2d2d2d;
   border-radius: 12px;
   padding: 40px;
   width: 1000px;
@@ -21,6 +32,19 @@
   position: relative;
   border-left: 4px solid;
   border-image: linear-gradient(to bottom, #3a81f4, #1e3b8b) 1;
+  transition: background-color 0.3s ease;
+}
+
+/* Card - tema claro */
+.light .perfil-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Card - tema escuro */
+.dark .perfil-card {
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Lado esquerdo: avatar e informações */
@@ -36,13 +60,25 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #9E9E9E;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  border: 4px solid #6A6A6A;
+  border: 4px solid;
   position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Avatar - tema claro */
+.light .perfil-avatar-outer {
+  background-color: #e0e0e0;
+  border-color: #bdbdbd;
+}
+
+/* Avatar - tema escuro */
+.dark .perfil-avatar-outer {
+  background-color: #9E9E9E;
+  border-color: #6A6A6A;
 }
 
 /* Avatar - círculo interno */
@@ -50,8 +86,18 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #6A6A6A;
   position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Avatar interno - tema claro */
+.light .perfil-avatar-inner {
+  background-color: #bdbdbd;
+}
+
+/* Avatar interno - tema escuro */
+.dark .perfil-avatar-inner {
+  background-color: #6A6A6A;
 }
 
 /* Avatar - círculo pequeno */
@@ -59,11 +105,21 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #4A4A4A;
   position: absolute;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+/* Círculo pequeno - tema claro */
+.light .perfil-avatar-small-circle {
+  background-color: #9e9e9e;
+}
+
+/* Círculo pequeno - tema escuro */
+.dark .perfil-avatar-small-circle {
+  background-color: #4A4A4A;
 }
 
 /* Avatar - semicírculo embaixo */
@@ -71,11 +127,21 @@
   width: 50px;
   height: 35px;
   border-radius: 25px 25px 0 0;
-  background-color: #4A4A4A;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+/* Semicírculo - tema claro */
+.light .perfil-avatar-semicircle {
+  background-color: #9e9e9e;
+}
+
+/* Semicírculo - tema escuro */
+.dark .perfil-avatar-semicircle {
+  background-color: #4A4A4A;
 }
 
 /* Nome do usuário */
@@ -84,15 +150,41 @@
   font-weight: bold;
   margin: 0 0 10px 0;
   text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Nome - tema claro */
+.light .perfil-nome {
+  color: #333;
+}
+
+/* Nome - tema escuro */
+.dark .perfil-nome {
+  color: white;
 }
 
 /* Email e telefone */
+.perfil-genero,
 .perfil-email,
 .perfil-telefone {
   font-size: 16px;
-  color: #B0B0B0;
   margin: 0 0 5px 0;
   text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Email/telefone - tema claro */
+.light .perfil-genero,
+.light .perfil-email,
+.light .perfil-telefone {
+  color: #666;
+}
+
+/* Email/telefone - tema escuro */
+.dark .perfil-genero,
+.dark .perfil-email,
+.dark .perfil-telefone {
+  color: #B0B0B0;
 }
 
 .perfil-telefone {
@@ -115,7 +207,6 @@
   transition: all 0.3s ease;
   padding: 12px 30px;
   border: 2px solid transparent;
-  color: white;
   margin-top: 5rem;
 }
 
@@ -174,8 +265,34 @@
   margin-left: 78px;
   display: block;
   font-size: 16px;
-  color: #B0B0B0;
   margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Label - tema claro */
+.light .perfil-label {
+  color: #666;
+}
+
+/* Label - tema escuro */
+.dark .perfil-label {
+  color: #B0B0B0;
+}
+
+/* Hint de caracteres no label */
+.perfil-caracteres-hint {
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+/* Hint - tema claro */
+.light .perfil-caracteres-hint {
+  color: #888;
+}
+
+/* Hint - tema escuro */
+.dark .perfil-caracteres-hint {
+  color: #888;
 }
 
 /* Inputs */
@@ -185,11 +302,32 @@
   padding: 12px 0;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #555;
-  color: white;
+  border-bottom: 2px solid;
   font-size: 16px;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Input - tema claro */
+.light .perfil-input {
+  color: #333;
+  border-bottom-color: #ccc;
+}
+
+/* Input - tema escuro */
+.dark .perfil-input {
+  color: white;
+  border-bottom-color: #555;
+}
+
+/* Placeholder - tema claro */
+.light .perfil-input::placeholder {
+  color: #999;
+}
+
+/* Placeholder - tema escuro */
+.dark .perfil-input::placeholder {
+  color: #777;
 }
 
 /* Inputs habilitados para edição */
@@ -205,9 +343,19 @@
 /* Contadores de caracteres */
 .perfil-caracteres {
   font-size: 11px;
-  color: #666;
   text-align: right;
   margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Caracteres - tema claro */
+.light .perfil-caracteres {
+  color: #888;
+}
+
+/* Caracteres - tema escuro */
+.dark .perfil-caracteres {
+  color: #666;
 }
 
 /* Contador de caracteres email com espaço entre os dois elementos */
@@ -217,6 +365,16 @@
   align-items: center;
   margin-top: 4px;
   font-size: 11px;
-  color: #666;
   margin-left: 32.6rem;
+  transition: color 0.3s ease;
+}
+
+/* Email footer - tema claro */
+.light .perfil-email-footer {
+  color: #888;
+}
+
+/* Email footer - tema escuro */
+.dark .perfil-email-footer {
+  color: #666;
 }

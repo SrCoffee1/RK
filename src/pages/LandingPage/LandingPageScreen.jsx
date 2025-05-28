@@ -59,20 +59,10 @@ function LandingPageScreen() {
             <div className="texto-sobre">
               <h1 className="titulo-sobre">SOBRE NÓS</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Dignissimos, neque commodi architecto deleniti nesciunt 
-                tempore molestiae earum delectus velit iure doloremque 
-                fugiat eius culpa beatae animi, nam unde sequi a.Lorem 
-                ipsum dolor sit amet consectetur, adipisicing elit. 
-                Dignissimos, neque commodi architecto deleniti nesciunt 
-                tempore molestiae earum delectus velit iure doloremque 
-                fugiat eius culpa beatae animi, nam unde sequi a.Lorem 
-                ipsum dolor sit amet consectetur, adipisicing elit. 
-                Dignissimos, neque commodi architecto deleniti nesciunt 
-                tempore molestiae earum delectus velit iure doloremque 
-                fugiat eius culpa beatae animi, nam und.
+                Nossa equipe é formada por profissionais altamente qualificados, que reúnem conhecimentos aprofundados nas áreas de tecnologia, saúde e segurança. Trabalhamos de maneira constante e dedicada para aprimorar o RiskAlert, garantindo que o sistema evolua sempre em precisão, confiabilidade e eficiência. Entendemos que a segurança dos seus entes queridos não pode esperar, por isso investimos em inovação e excelência para entregar uma solução que realmente faz a diferença no dia a dia.
+
               </p>
-              <button className="botao-ler-mais">LER MAIS</button>
+              <button className="botao-ler-mais">Ler mais</button>
             </div>
             <div className="imagem-sobre">
               <img src={cameraIcon} alt="Câmera de segurança" className="icone-camera" />

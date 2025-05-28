@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useTheme } from '../../contexts/ThemeContext'; // Importando o contexto de tema
 import './Perfil.css';
 
 export default function Perfil() {
+  const { isDarkTheme } = useTheme(); // Usando o contexto de tema
+  
   const [usuario, setUsuario] = useState({
     nome: 'Usuário123',
-    genero: '',
+    genero: 'Indefinido',
     telefone: '+00 00000-0000',
     email: 'usuário@riskalert.com'
   });
@@ -63,7 +66,7 @@ export default function Perfil() {
   };
 
   return (
-    <div className="perfil-container">
+    <div className={`perfil-container ${isDarkTheme ? 'dark' : 'light'}`}>
       <div className="perfil-card">
         <div className="perfil-left">
           <div className="perfil-avatar-outer">
@@ -74,6 +77,7 @@ export default function Perfil() {
           </div>
 
           <h1 className="perfil-nome">{usuario.nome || 'Usuário123'}</h1>
+          <p className="perfil-genero">{usuario.genero || 'Indefinido'}</p>
           <p className="perfil-email">{usuario.email || 'usuário@riskalert.com'}</p>
           <p className="perfil-telefone">{usuario.telefone || '+00 00000-0000'}</p>
 
@@ -105,7 +109,7 @@ export default function Perfil() {
         <div className="perfil-right">
           <div>
             <label className="perfil-label">
-              Nome <span style={{ fontSize: '12px', color: '#888' }}>(máx. 50 caracteres)</span>
+              Nome <span className="perfil-caracteres-hint">(máx. 50 caracteres)</span>
             </label>
             <input
               type="text"
@@ -120,7 +124,7 @@ export default function Perfil() {
 
           <div>
             <label className="perfil-label">
-              Gênero <span style={{ fontSize: '12px', color: '#888' }}>(máx. 20 caracteres)</span>
+              Gênero <span className="perfil-caracteres-hint">(máx. 20 caracteres)</span>
             </label>
             <input
               type="text"
@@ -135,7 +139,7 @@ export default function Perfil() {
 
           <div>
             <label className="perfil-label">
-              Telefone <span style={{ fontSize: '12px', color: '#888' }}>(máx. 20 caracteres)</span>
+              Telefone <span className="perfil-caracteres-hint">(máx. 20 caracteres)</span>
             </label>
             <input
               type="text"
@@ -150,7 +154,7 @@ export default function Perfil() {
 
           <div>
             <label className="perfil-label">
-              Email <span style={{ fontSize: '12px', color: '#888' }}>(máx. 100 caracteres)</span>
+              Email <span className="perfil-caracteres-hint">(máx. 100 caracteres)</span>
             </label>
             <input
               type="email"
@@ -160,7 +164,7 @@ export default function Perfil() {
               placeholder="Digite seu email"
               className={`perfil-input ${modoEdicao ? 'editavel' : ''} ${usuario.email && !validarEmail(usuario.email) ? 'email-invalido' : ''}`}
             />
-            <div className="perfil-email-footer" style={{color: usuario.email && !validarEmail(usuario.email) ? '#E74C3C' : '#666'}}>
+            <div className="perfil-email-footer" style={{color: usuario.email && !validarEmail(usuario.email) ? '#E74C3C' : ''}}>
               <span>{usuario.email.length}/100</span>
               {usuario.email && !validarEmail(usuario.email) && <span>Formato de email inválido</span>}
             </div>

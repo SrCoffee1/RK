@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './MenuOpcoes.css';
 import { useContatos } from '../../contexts/ContatosContext';
+import { useTheme } from '../../contexts/ThemeContext'; // Importar o contexto de tema
 
 function MenuOpcoes({ contato, onFechar }) {
   const { atualizarContato, toggleFavorito, excluirContato } = useContatos();
+  const { isDarkTheme } = useTheme(); // Usar o contexto de tema
   const [editando, setEditando] = useState(false);
   const [erroFormulario, setErroFormulario] = useState('');
   const [formDados, setFormDados] = useState({
     nome: contato.nome,
-    sobrenome: contato.sobrenome,
+    genero: contato.genero || '', // Adicionar genero e garantir que não seja undefined
     telefone: contato.telefone,
     email: contato.email,
   });
@@ -19,9 +21,9 @@ function MenuOpcoes({ contato, onFechar }) {
 
   const handleSalvar = (e) => {
     e.preventDefault();
+    // Corrigir a validação para usar os campos corretos
     if (
       formDados.nome.trim() &&
-      formDados.sobrenome.trim() &&
       formDados.telefone.trim() &&
       formDados.email.trim()
     ) {
@@ -30,14 +32,14 @@ function MenuOpcoes({ contato, onFechar }) {
       setErroFormulario('');
       if (onFechar) onFechar();
     } else {
-      setErroFormulario('Por favor, preencha todos os campos.');
+      setErroFormulario('Por favor, preencha todos os campos obrigatórios.');
       setTimeout(() => setErroFormulario(''), 3000);
     }
   };
 
   return (
     <>
-      <div className="menu-opcoes">
+      <div className={`menu-opcoes ${isDarkTheme ? 'dark' : 'light'}`}>
         <div className="lista-opcoes">
           <button className="opcao-menu" onClick={() => setEditando(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -76,7 +78,7 @@ function MenuOpcoes({ contato, onFechar }) {
           setErroFormulario('');
           if (onFechar) onFechar();
         }}>
-          <div className="modal-edicao" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
+          <div className={`modal-edicao ${isDarkTheme ? 'dark' : 'light'}`} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
             <form className="form-edicao" onSubmit={handleSalvar}>
               {erroFormulario && (
                 <div className="aviso-erro">{erroFormulario}</div>
@@ -87,18 +89,25 @@ function MenuOpcoes({ contato, onFechar }) {
                 value={formDados.nome}
                 onChange={handleChange}
                 autoFocus
+                className={isDarkTheme ? 'dark' : 'light'}
               />
-              <input
-                name="sobrenome"
-                placeholder="Sobrenome"
-                value={formDados.sobrenome}
+              <select
+                name="genero"
+                value={formDados.genero}
                 onChange={handleChange}
-              />
+                className={isDarkTheme ? 'dark' : 'light'}
+              >
+                <option value="">Selecione o gênero</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+              </select>
               <input
                 name="telefone"
                 placeholder="Telefone"
                 value={formDados.telefone}
                 onChange={handleChange}
+                className={isDarkTheme ? 'dark' : 'light'}
               />
               <input
                 name="email"
@@ -106,6 +115,7 @@ function MenuOpcoes({ contato, onFechar }) {
                 type="email"
                 value={formDados.email}
                 onChange={handleChange}
+                className={isDarkTheme ? 'dark' : 'light'}
               />
               <button type="submit" className="btn-confirmar">Salvar</button>
             </form>
