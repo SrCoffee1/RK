@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+*{
+  font-family: "Poppins", sans-serif;
+}
 
 #home {
   scroll-margin-top: 120px; /* margem maior para a seção Home */
@@ -38,17 +41,24 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10; /* Garantindo que o cabeçalho fique acima de outros conteúdos */
+  z-index: 100; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 }
 
 /* Logo fixo */
 .logo {
-  color: rgb(0, 0, 0);
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-logo {
+  height: 40px; /* ajuste conforme necessário */
+}
+
+.logo h1 {
+  margin: 0;
 }
 
 /* Navegação fixada à direita */
@@ -67,10 +77,12 @@ html {
 }
 
 .navegacao ul li a {
-  color: #202020;
+  color: #3d3d3d;
+  font-weight: 600;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: 5%;
 }
 
 .navegacao ul li a:hover {
@@ -88,7 +100,7 @@ html {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  margin-top: 50px; /* Compensando a altura do cabeçalho fixo */
+  margin-top: 25px; 
 }
 
 /* Seção de boas-vindas */
@@ -104,35 +116,50 @@ html {
 }
 
 .imagem-boas-vindas {
-  width: 65%;
+  width: 50%;
   height: auto;
+  left: auto;
+  right: auto;
+  align-items: center;
   object-fit: contain;
-  margin-bottom: 20px;
+}
+.titulo-boas-vindas span{
+  color: #3a81f4;
 }
 
 .titulo-boas-vindas {
   color: #202020;
-  font-size: 40px;
+  font-size: 32px;
+  left: auto;
+  right: auto;
   font-weight: bold;
   margin-bottom: 20px;
   letter-spacing: 1px;
+  margin-top: -35px;
+}
+.img-logo{
+  width: 45px;
 }
 
 .texto-boas-vindas {
-  font-size: 21px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #6e6e6e;
+  color: #3d3d3d;
+  font-weight: 600;
   max-width: 600px;
   margin: 0 auto;
 }
-
-
+.title-sobre h1{
+   font-size: 25px;
+   color: #242424;
+   margin-bottom: 5%;
+}
 
 .titulo-boas-vindas,
 .titulo-sobre{
   position: relative;
   display: inline-block;
-  padding-bottom: 10px; /* Ajuste a distância entre o título e a linha */
+  padding-bottom: 10px;/* Ajuste a distância entre o título e a linha */
 }
 
 .titulo-boas-vindas::after,
@@ -198,10 +225,12 @@ html {
 }
 
 .texto-sobre p {
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #6e6e6e;
+  color: #3d3d3d;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .botao-ler-mais {
@@ -264,7 +293,8 @@ html {
 /* Estilos gerais para a seção de contato */
 .container-contato {
   margin-bottom: 10%;
-  width: 100%;
+  margin-left: 5%;
+  width: 90%;
   display: flex;
   justify-content: center;
   padding: 2rem 0;

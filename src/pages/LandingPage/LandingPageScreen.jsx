@@ -24,7 +24,14 @@ function LandingPageScreen() {
   return (
     <div className="aplicativo">
       <header className="cabecalho">
-        <div className="logo">RISKALERT</div>
+        <div className="logo">
+          <img
+            src={logo}
+            alt="Ilustração de boas-vindas"
+            className="img-logo"
+          />
+          <h1>RISKALERT</h1>
+        </div>
         <nav className="navegacao">
           <ul>
             <li><a href="#home">Inicio</a></li>
@@ -42,12 +49,12 @@ function LandingPageScreen() {
             alt="Ilustração de boas-vindas"
             className="imagem-boas-vindas"
           />
-          
+
           <h1 className="titulo-boas-vindas">
-            BEM VINDO AO<br/>
-            RISK ALERT
+            Sua segurança e o cuidado com sua familia é nossa <span>prioridade!</span>
+
           </h1>
-          
+
           <p className="texto-boas-vindas">
             Nosso sistema de monitoramento em tempo real, com análise inteligente por IA, identifica situações críticas como quedas ou falta de movimento. Receba alertas imediatos via WhatsApp para manter seus entes queridos sempre protegidos.
           </p>
@@ -57,12 +64,8 @@ function LandingPageScreen() {
         <div id="sobre" className="container-sobre">
           <div className="conteudo-sobre">
             <div className="texto-sobre">
-              <h1 className="titulo-sobre">SOBRE NÓS</h1>
-              <p>
-                Nossa equipe é formada por profissionais altamente qualificados, que reúnem conhecimentos aprofundados nas áreas de tecnologia, saúde e segurança. Trabalhamos de maneira constante e dedicada para aprimorar o RiskAlert, garantindo que o sistema evolua sempre em precisão, confiabilidade e eficiência. Entendemos que a segurança dos seus entes queridos não pode esperar, por isso investimos em inovação e excelência para entregar uma solução que realmente faz a diferença no dia a dia.
-
-              </p>
-              <button className="botao-ler-mais">Ler mais</button>
+              <h1 className="title-sobre">SOBRE NÓS</h1>
+              <p className="paragrafo-sobre">Nossa equipe é formada por profissionais altamente qualificados, que reúnem conhecimentos aprofundados nas áreas de tecnologia, saúde e segurança. Trabalhamos de maneira constante e dedicada para aprimorar o RiskAlert, garantindo que o sistema evolua sempre em precisão, confiabilidade e eficiência. Entendemos que a segurança dos seus entes queridos não pode esperar, por isso investimos em inovação e excelência para entregar uma solução que realmente faz a diferença no dia a dia.</p>
             </div>
             <div className="imagem-sobre">
               <img src={cameraIcon} alt="Câmera de segurança" className="icone-camera" />
@@ -86,7 +89,7 @@ function LandingPageScreen() {
                   <p>123 Rua Exemplo, Feira de Santana, Brasil</p>
                 </div>
               </div>
-              
+
               {/* Ícone de Telefone */}
               <div className="item-info">
                 <div className="icone-info icone-info-telefone">
@@ -98,7 +101,7 @@ function LandingPageScreen() {
                   <p>+55 00 0000-0000</p>
                 </div>
               </div>
-              
+
               {/* Ícone de Email */}
               <div className="item-info">
                 <div className="icone-info icone-info-email">
@@ -112,10 +115,10 @@ function LandingPageScreen() {
               </div>
             </div>
 
-            
+
             <div className="lado-formulario">
               <h2 className="titulo-enviar">Envie sua mensagem</h2>
-              
+
               <form onSubmit={handleSubmit} className="formulario-contato">
                 <div className="grupo-campo">
                   <input
@@ -128,7 +131,7 @@ function LandingPageScreen() {
                     className="campo-entrada"
                   />
                 </div>
-                
+
                 <div className="grupo-campo">
                   <input
                     type="email"
@@ -140,7 +143,7 @@ function LandingPageScreen() {
                     className="campo-entrada"
                   />
                 </div>
-                
+
                 <div className="grupo-campo">
                   <textarea
                     name="message"
@@ -151,7 +154,7 @@ function LandingPageScreen() {
                     className="campo-texto"
                   />
                 </div>
-                
+
                 <button type="submit" className="botao-enviar">Enviar</button>
               </form>
             </div>
